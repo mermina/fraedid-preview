@@ -252,7 +252,16 @@ textarea { resize: vertical; }
 .site-footer .muted { color: #b5b2aa; }
 .site-footer a { color: #fff; }
 .footer-grid { display: grid; gap: 20px; }
-@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; } }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1.3fr 1fr; } }
+/* Professional memberships in the footer: logo tile + name + role, linked to the organisation */
+.footer-label { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: #b5b2aa; margin-bottom: 10px !important; }
+.footer-orgs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.footer-orgs a { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.footer-orgs img { height: 40px; width: 92px; object-fit: contain; background: #fff; padding: 4px 6px; border-radius: 6px; flex: none; }
+.footer-orgs span { display: flex; flex-direction: column; line-height: 1.35; }
+.footer-orgs a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+.footer-orgs small { color: #b5b2aa; font-size: .82rem; }
 .footer-grid p { margin: 0; }
 .footer-base { border-top: 1px solid #4a4a47; margin-top: 32px; padding-top: 18px; font-size: .85rem; }
 
