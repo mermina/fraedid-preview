@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ t(post.title) }} · {{ site.name }}{% endblock %}
+{% block description %}{{ t(post.excerpt) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_image %}{% set src = img(post.image, 1200) %}{% if src and not draft %}<meta property="og:image" content="{{ site.domain }}/{{ src }}">{% endif %}{% endblock %}
+{% block main %}
+<article class="wrap narrow post">
+  <p><a class="link" href="{{ url('blogg') }}">← {{ t(s.blog_back) }}</a></p>
+  <h1>{{ t(post.title) }}</h1>
+  <p class="muted">{{ when(post.date) }} · {{ site.owner }}</p>
+  {% set src = img(post.image, 1200) %}
+  {% if src %}<img class="rounded" src="{{ root }}{{ src }}" alt="">{% endif %}
+  <div class="prose">{{ md(post.body) }}</div>
+  <p class="share"><a class="btn btn-ghost" rel="noopener" target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u={{ (site.domain ~ '/' ~ path)|urlencode }}">{{ t(s.share_fb) }}</a></p>
+</article>
+{% endblock %}

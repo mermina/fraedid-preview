@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ t(s.nav.blogg) }} · {{ site.name }}{% endblock %}
+{% block description %}{{ t(s.blog_intro) }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ t(s.nav.blogg) }}</h1>
+    <p class="lead">{{ t(s.blog_intro) }}</p>
+  </div>
+</section>
+<div class="wrap">
+  {% if posts %}
+  <ul class="posts">
+    {% for p in posts %}
+    <li class="post-card">
+      {% set src = img(p.image, 800) %}
+      {% if src %}<img src="{{ root }}{{ src }}" alt="" loading="lazy">{% endif %}
+      <p class="muted">{{ when(p.date) }}{% if p.show == false %} · hidden{% endif %}</p>
+      <h2 class="h3"><a href="{{ url('blogg') }}{{ p.slug }}/">{{ t(p.title) }}</a></h2>
+      <p>{{ t(p.excerpt) }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">{{ t(s.blog_empty) }}</p>
+  {% endif %}
+</div>
+{% endblock %}

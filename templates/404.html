@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ t(s.not_found_title) }} · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap narrow center">
+    <h1>{{ s.not_found_title.is }}</h1>
+    <p>{{ s.not_found_body.is }}</p>
+    <p lang="en" class="muted">{{ s.not_found_title.en }}. {{ s.not_found_body.en }}</p>
+    <p><a class="btn" href="/">{{ s.not_found_back.is }}</a> <a class="link" lang="en" href="/en/">{{ s.not_found_back.en }}</a></p>
+  </div>
+</section>
+{% endblock %}

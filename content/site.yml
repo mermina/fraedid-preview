@@ -1,0 +1,36 @@
+# Fræið: contact details and settings used on every page.
+# Every text has an Icelandic (is) and an English (en) version.
+name: Fræið
+owner: Emilia Christina Gylfadóttir
+title_line:
+  is: Klínískur dáleiðari – Dip.CH
+  en: Clinical hypnotherapist – Dip.CH
+tagline:
+  is: Þar sem sjálfsvitundin vex.
+  en: Where self-awareness grows.
+description:
+  is: Fræið meðferðarstofa í Reykjavík. Klínísk dáleiðsla og Hugræn endurforritun hjá Emilíu Christinu Gylfadóttur, Ármúla 23.
+  en: Fræið therapy practice in Reykjavík. Clinical hypnotherapy and Hugræn endurforritun with Emilia Christina Gylfadóttir, Ármúli 23.
+phone: 894-5100
+email: emilia@sjalfsvitund.is
+address:
+  is: Ármúla 23, 108 Reykjavík
+  en: Ármúli 23, 108 Reykjavík
+domain: https://sjalfsvitund.is
+# Reply time promised under the booking form and in the auto-reply.
+reply_hours: 48
+# Address of the Google Apps Script that receives both forms (see extras/apps-script/README.md).
+# Empty = forms show a "not connected yet" message instead of sending.
+form_endpoint: ""
+# Organisations shown under "Fagleg tengsl" (checked 3 Nov 2026 on their own sites).
+orgs:
+  - name: Félag klínískra dáleiðenda
+    role:
+      is: Meðstjórnandi
+      en: Board member
+    url: https://kvidalaus.is/um
+  - name: Dáleiðslufélagið
+    role:
+      is: Félagsmaður
+      en: Member
+    url: https://daleidslufelagid.is/um

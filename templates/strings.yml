@@ -1,0 +1,66 @@
+# Interface words (menu, buttons, form). Part of the design, kept by Marina.
+lang_name: { is: Íslenska, en: English }
+skip: { is: Fara beint í efni, en: Skip to content }
+menu: { is: Valmynd, en: Menu }
+close: { is: Loka, en: Close }
+home: { is: Forsíða, en: Home }
+nav:
+  about: { is: Um mig, en: About me }
+  klinisk-daleidsla: { is: Klínísk dáleiðsla, en: Clinical hypnotherapy }
+  hugraen-endurforritun: { is: Hugræn endurforritun, en: Hugræn endurforritun }
+  fraedsla: { is: Fræðsla, en: Learning }
+  kyrrd-heima: { is: Kyrrð heima, en: Calm at home }
+  blogg: { is: Blogg, en: Blog }
+  hafa-samband: { is: Bóka tíma, en: Book a session }
+book: { is: Bóka tíma, en: Book a session }
+read_more: { is: Lesa meira, en: Read more }
+services_heading: { is: Meðferðir, en: Treatments }
+price: { is: Verð, en: Price }
+other_service: { is: Kynntu þér líka, en: See also }
+faq_link: { is: Algengar spurningar um dáleiðslu, en: Common questions about hypnotherapy }
+contact_heading: { is: Hafa samband, en: Contact }
+phone: { is: Sími, en: Phone }
+email: { is: Netfang, en: Email }
+address: { is: Heimilisfang, en: Address }
+hours: { is: Opnunartími, en: Opening hours }
+shop_where_missing: { is: "Hafðu samband til að kíkja við:", en: "Get in touch to arrange a visit:" }
+objects_soon: { is: Myndir af hlutunum koma fljótlega., en: Photos of the objects are coming soon. }
+blog_intro: { is: Greinar frá Fræinu., en: Articles from Fræið. }
+blog_empty: { is: Fyrstu greinarnar eru væntanlegar., en: The first articles are on their way. }
+blog_back: { is: Allar greinar, en: All articles }
+share_fb: { is: Deila á Facebook, en: Share on Facebook }
+footer_rights: { is: Allur réttur áskilinn, en: All rights reserved }
+not_found_title: { is: Síðan fannst ekki, en: Page not found }
+not_found_body: { is: "Þessi síða er ekki til, eða hefur verið færð.", en: "This page doesn't exist, or has moved." }
+not_found_back: { is: Fara á forsíðu, en: Go to the home page }
+months:
+  is: [janúar, febrúar, mars, apríl, maí, júní, júlí, ágúst, september, október, nóvember, desember]
+  en: [January, February, March, April, May, June, July, August, September, October, November, December]
+form:
+  name: { is: Nafn, en: Name }
+  email: { is: Netfang, en: Email }
+  phone: { is: Símanúmer, en: Phone number }
+  service: { is: "Hvað viltu bóka?", en: "What would you like to book?" }
+  service_unsure: { is: "Ég er ekki viss, vil spjalla fyrst", en: "I'm not sure, I'd like to talk first" }
+  sessions: { is: Fjöldi tíma, en: Number of sessions }
+  sessions_one: { is: Einn tími, en: One session }
+  sessions_few: { is: Nokkrir tímar, en: Several sessions }
+  sessions_unknown: { is: Veit ekki enn, en: Don't know yet }
+  when: { is: "Hvenær hentar þér best?", en: "When suits you best?" }
+  when_weekdays: { is: Virkir dagar, en: Weekdays }
+  when_evenings: { is: Kvöld, en: Evenings }
+  when_weekends: { is: Helgar, en: Weekends }
+  message: { is: "Viltu segja eitthvað meira?", en: "Anything else you'd like to say?" }
+  message_course: { is: "Viltu segja eitthvað meira? (t.d. hvað þú vilt helst læra)", en: "Anything else? (e.g. what you would most like to learn)" }
+  message_note: { is: "Aðeins Emilía les það sem þú skrifar hér og farið er með það sem trúnaðarmál. Þú þarft ekki að lýsa því sem þú vilt vinna með í smáatriðum; við förum yfir það saman í fyrsta tímanum.", en: "Only Emilia reads what you write here, and it is treated as confidential. You don't need to describe what you want to work on in detail; we will go through it together in the first session." }
+  followup: { is: Ég vil fá stutta kveðju frá Emilíu um tveimur vikum eftir tíma, en: I'd like a short note from Emilia about two weeks after my session }
+  newsletter: { is: Ég vil fá fréttir og tilboð frá Fræinu (sjaldan), en: "I'd like news and offers from Fræið (rarely)" }
+  optional: { is: valfrjálst, en: optional }
+  submit_booking: { is: Ég vil bóka tíma, en: I'd like to book }
+  submit_course: { is: Skrá mig á biðlista, en: Join the waiting list }
+  sending: { is: Sendi…, en: Sending… }
+  thanks_booking: { is: "Takk! Beiðnin þín er komin til mín og ég hef samband innan {h} klukkustunda. Staðfesting er á leiðinni í netfangið þitt.", en: "Thank you! Your request has reached me and I will be in touch within {h} hours. A confirmation is on its way to your inbox." }
+  thanks_course: { is: "Takk! Þú ert komin(n) á biðlistann. Staðfesting er á leiðinni í netfangið þitt.", en: "Thank you! You are on the waiting list. A confirmation is on its way to your inbox." }
+  error: { is: "Eitthvað fór úrskeiðis. Reyndu aftur, eða hringdu í 894-5100.", en: "Something went wrong. Please try again, or call 894-5100." }
+  not_connected: { is: "Forskoðun: formið er ekki tengt enn, svo ekkert var sent.", en: "Preview: the form isn't connected yet, so nothing was sent." }
+  privacy: { is: "Upplýsingarnar fara aðeins til Emilíu og eru geymdar í einkaskjali hennar. Þær eru eingöngu notaðar til að svara þér og ekki deilt með neinum. Þú getur hvenær sem er beðið um að þeim verði eytt með pósti á {email}.", en: "Your details go only to Emilia and are kept in her private records. They are used only to reply to you and are never shared. You can ask for them to be deleted at any time by emailing {email}." }

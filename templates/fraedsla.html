@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "macros.html" import course_form %}
+{% block title %}{{ t(page.title) }} · {{ site.name }}{% endblock %}
+{% block description %}{{ t(page.coming_soon) }}. {{ t(site.description) }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ t(page.title) }}</h1>
+    <p class="eyebrow soon">{{ t(page.coming_soon) }}</p>
+  </div>
+</section>
+<div class="wrap two-col">
+  <div class="prose">
+    {{ md(page.body) }}
+    {% set photo = img(page.photo, 1000) %}
+    {% if photo %}<img class="rounded" src="{{ root }}{{ photo }}" alt="{{ t(page.photo_alt) }}" loading="lazy">{% endif %}
+  </div>
+  <div class="card">
+    <h2 class="h3">{{ t(page.form_heading) }}</h2>
+    {{ course_form(site, t, s, lang) }}
+  </div>
+</div>
+{% endblock %}

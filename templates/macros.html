@@ -1,0 +1,87 @@
+{# Small reusable pieces: service card, price box, forms. #}
+
+{% macro price_box(svc, t, s, url, key) %}
+<div class="price-box">
+  <p class="eyebrow">{{ t(s.price) }}</p>
+  <p class="price"><span class="amount">{{ svc.price.amount }}</span> <span class="muted">· {{ t(svc.price.duration) }}</span></p>
+  <a class="btn" href="{{ url('hafa-samband') }}?medferd={{ key }}#bokun">{{ t(s.book) }}</a>
+</div>
+{% endmacro %}
+
+{% macro privacy(t, s, site) %}
+<p class="privacy">{{ t(s.form.privacy)|replace('{email}', site.email) }}</p>
+{% endmacro %}
+
+{% macro status(t, s) %}
+<p class="form-status" role="status" aria-live="polite" hidden></p>
+{% endmacro %}
+
+{# Booking request. Field names match extras/apps-script/Code.gs. #}
+{% macro booking_form(site, services, t, s, lang) %}
+<form class="form js-form" id="bokun" action="{{ site.form_endpoint }}" method="post" novalidate
+      data-endpoint="{{ site.form_endpoint }}"
+      data-thanks="{{ t(s.form.thanks_booking)|replace('{h}', site.reply_hours|string) }}"
+      data-error="{{ t(s.form.error) }}" data-sending="{{ t(s.form.sending) }}" data-notconnected="{{ t(s.form.not_connected) }}">
+  <input type="hidden" name="form" value="booking">
+  <input type="hidden" name="lang" value="{{ lang }}">
+  <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="field"><label for="b-name">{{ t(s.form.name) }}</label><input id="b-name" name="name" autocomplete="name" required></div>
+  <div class="field-row">
+    <div class="field"><label for="b-email">{{ t(s.form.email) }}</label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="b-phone">{{ t(s.form.phone) }}</label><input id="b-phone" name="phone" type="tel" autocomplete="tel" required></div>
+  </div>
+  <fieldset class="field">
+    <legend>{{ t(s.form.service) }}</legend>
+    {% for k, svc in services.items() %}
+    <label class="choice"><input type="radio" name="service" value="{{ t(svc.title) }}" data-key="{{ k }}" required{% if loop.first %} checked{% endif %}> {{ t(svc.title) }} <span class="muted">({{ t(svc.price.duration) }} · {{ svc.price.amount }})</span></label>
+    {% endfor %}
+    <label class="choice"><input type="radio" name="service" value="{{ t(s.form.service_unsure) }}" data-key="unsure"> {{ t(s.form.service_unsure) }}</label>
+  </fieldset>
+  <fieldset class="field">
+    <legend>{{ t(s.form.sessions) }} <span class="muted">({{ t(s.form.optional) }})</span></legend>
+    {% for opt in ['sessions_one', 'sessions_few', 'sessions_unknown'] %}
+    <label class="choice choice-inline"><input type="radio" name="sessions" value="{{ t(s.form[opt]) }}"> {{ t(s.form[opt]) }}</label>
+    {% endfor %}
+  </fieldset>
+  <fieldset class="field">
+    <legend>{{ t(s.form.when) }} <span class="muted">({{ t(s.form.optional) }})</span></legend>
+    {% for opt in ['when_weekdays', 'when_evenings', 'when_weekends'] %}
+    <label class="choice choice-inline"><input type="checkbox" name="when" value="{{ t(s.form[opt]) }}"> {{ t(s.form[opt]) }}</label>
+    {% endfor %}
+  </fieldset>
+  <div class="field">
+    <label for="b-msg">{{ t(s.form.message) }} <span class="muted">({{ t(s.form.optional) }})</span></label>
+    <textarea id="b-msg" name="message" rows="4" aria-describedby="b-msg-note"></textarea>
+    <p class="hint" id="b-msg-note">{{ t(s.form.message_note) }}</p>
+  </div>
+  <label class="choice"><input type="checkbox" name="followup" value="yes"> {{ t(s.form.followup) }}</label>
+  <label class="choice"><input type="checkbox" name="newsletter" value="yes"> {{ t(s.form.newsletter) }}</label>
+  <button class="btn" type="submit">{{ t(s.form.submit_booking) }}</button>
+  {{ status(t, s) }}
+  {{ privacy(t, s, site) }}
+</form>
+{% endmacro %}
+
+{# Course waiting list: name + email only (no phone, Marina 3 Nov). #}
+{% macro course_form(site, t, s, lang) %}
+<form class="form js-form" id="bidlisti" action="{{ site.form_endpoint }}" method="post" novalidate
+      data-endpoint="{{ site.form_endpoint }}"
+      data-thanks="{{ t(s.form.thanks_course) }}"
+      data-error="{{ t(s.form.error) }}" data-sending="{{ t(s.form.sending) }}" data-notconnected="{{ t(s.form.not_connected) }}">
+  <input type="hidden" name="form" value="waitlist">
+  <input type="hidden" name="lang" value="{{ lang }}">
+  <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="field-row">
+    <div class="field"><label for="c-name">{{ t(s.form.name) }}</label><input id="c-name" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="c-email">{{ t(s.form.email) }}</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+  </div>
+  <div class="field">
+    <label for="c-msg">{{ t(s.form.message_course) }}</label>
+    <textarea id="c-msg" name="message" rows="3"></textarea>
+  </div>
+  <label class="choice"><input type="checkbox" name="newsletter" value="yes"> {{ t(s.form.newsletter) }}</label>
+  <button class="btn" type="submit">{{ t(s.form.submit_course) }}</button>
+  {{ status(t, s) }}
+  {{ privacy(t, s, site) }}
+</form>
+{% endmacro %}

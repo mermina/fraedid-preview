@@ -1,0 +1,20 @@
+# Kyrrð heima: calming objects Emilia sells in her shop. Not sold online.
+title:
+  is: Kyrrð heima
+  en: Calm at home
+intro:
+  is: Hlutir sem skapa ró heima. Þeir eru ekki seldir á netinu; komdu við og skoðaðu þá í Fræinu.
+  en: Objects that bring calm into your home. They are not sold online; come by and see them at Fræið.
+# Where and when people can visit. Leave empty until Emilia confirms; the page then says "contact me".
+shop_address:
+  is: ""
+  en: ""
+opening_hours:
+  is: ""
+  en: ""
+# Objects: add as many as you like; top of the list = first on the page.
+objects: []
+#  - image: /media/kerti.jpg
+#    name: { is: Kerti, en: Candle }
+#    text: { is: Stutt lýsing., en: A short description. }
+#    show: true

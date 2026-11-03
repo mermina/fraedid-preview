@@ -1,0 +1,26 @@
+# Rebuild and publish the site on every push to main (incl. saves from Pages CMS).
+# Needs repo Settings → Pages → Source = "GitHub Actions".
+name: Build and deploy
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pyyaml jinja2 markdown pillow
+      - run: python build.py --draft   # preview stage: questions for Emilia + noindex. Drop --draft at launch.
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

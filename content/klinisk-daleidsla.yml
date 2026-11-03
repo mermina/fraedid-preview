@@ -1,0 +1,67 @@
+# Klínísk dáleiðsla. Texts: Emilia (3 Nov 2026). Price + length: her Framer draft.
+title:
+  is: Klínísk dáleiðsla
+  en: Clinical hypnotherapy
+lead:
+  is: Dáleiðsla er öflugt meðferðarform og eðlilegt hugarástand sem flestir upplifa daglega.
+  en: Hypnosis is a powerful form of therapy, and a natural state of mind most of us experience every day.
+price:
+  duration:
+    is: um 1½ klst.
+    en: about 1½ hours
+  amount: 23.000 kr.
+sections:
+  - heading:
+      is: Hvað er dáleiðsla?
+      en: What is hypnosis?
+    body:
+      is: Dáleiðsla er öflugt meðferðarform og eðlilegt hugarástand sem flestir upplifa daglega, til dæmis rétt áður en þeir sofna. Í þessu ástandi nær hugurinn djúpri slökun og innri einbeitingu, sem gerir auðveldara að nálgast undirvitundina og vinna með rótgróin mynstur og viðhorf. Einstaklingurinn er þó ávallt meðvitaður og við stjórn, en fær tækifæri til að vinna á dýpri hátt með tilfinningar, vana og hugsanir sem hafa áhrif á líðan og hegðun. Markmiðið er að skapa ró, frelsi og varanlegar jákvæðar breytingar.
+      en: Hypnosis is a powerful form of therapy and a natural state of mind that most people experience every day, for example just before falling asleep. In this state the mind reaches deep relaxation and inner focus, which makes it easier to reach the subconscious and work with deep-rooted patterns and beliefs. You remain aware and in control the whole time, but get the chance to work more deeply with the feelings, habits and thoughts that affect your wellbeing and behaviour. The aim is to create calm, freedom and lasting positive change.
+  - heading:
+      is: Af hverju dáleiðsla?
+      en: Why hypnotherapy?
+    body:
+      is: Dáleiðsla hentar þeim sem vilja vinna með rætur þeirra áskorana sem hafa áhrif á líðan þeirra í dag. Ef þú finnur fyrir kvíða, streitu, sjálfsefa, innri pressu eða endurteknum mynstrum í lífinu getur klínísk dáleiðsla hjálpað þér að nálgast þær á dýpri hátt. Meðferðin byggir á samstarfi og trausti og getur verið öflug leið til að efla sjálfstraust, finna meiri innri ró og skapa varanlegar breytingar.
+      en: Hypnotherapy suits people who want to work with the roots of the challenges that affect their wellbeing today. If you experience anxiety, stress, self-doubt, inner pressure or repeating patterns in life, clinical hypnotherapy can help you approach them at a deeper level. The treatment is built on cooperation and trust, and can be a powerful way to build self-confidence, find more inner calm and create lasting change.
+  - heading:
+      is: Hvernig veistu að dáleiðsla hentar þér?
+      en: How do you know if hypnotherapy is right for you?
+    body:
+      is: Ef þú ert opin fyrir því að skoða sjálfan þig af opnum huga og vinna með það sem liggur undir yfirborðinu gæti klínísk dáleiðsla hentað þér. Meðferðin byggir á samstarfi, trausti og virðingu og getur hjálpað þér að komast nær sjálfum þér og þeim breytingum sem þú leitar eftir.
+      en: If you are willing to look at yourself with an open mind and work with what lies beneath the surface, clinical hypnotherapy may be right for you. The treatment is built on cooperation, trust and respect, and can help you come closer to yourself and to the changes you are looking for.
+  - heading:
+      is: Hvernig fer meðferðin fram?
+      en: How does a session work?
+    body:
+      is: Fyrsti tíminn hefst á samtali þar sem við skoðum hvað þú vilt vinna með og hvaða markmiðum þú vilt ná. Að því loknu fer fram dáleiðslumeðferð þar sem unnið er með undirvitundina í öruggu og afslöppuðu umhverfi. Hver meðferð er einstaklingsmiðuð og tekur mið af þörfum hvers og eins.
+      en: The first session begins with a conversation in which we look at what you want to work on and which goals you want to reach. This is followed by hypnotherapy, working with the subconscious in a safe and relaxed setting. Each treatment is tailored to the needs of each person.
+  - heading:
+      is: Hvað getur þú búist við?
+      en: What can you expect?
+    body:
+      is: |
+        - Meðferðin fer fram í rólegu og öruggu umhverfi.
+        - Þú ert meðvitaður allan tímann.
+        - Hver meðferð er einstaklingsmiðuð.
+        - Allt sem fram fer í meðferðinni er trúnaðarmál.
+      en: |
+        - The session takes place in a calm and safe setting.
+        - You are aware the whole time.
+        - Each treatment is tailored to you.
+        - Everything that happens in a session is confidential.
+faq_heading:
+  is: Algengar spurningar
+  en: Frequently asked questions
+faq:
+  - q: { is: "Missi ég stjórn í dáleiðslu?", en: "Do I lose control under hypnosis?" }
+    a: { is: Nei. Þú ert meðvitaður og við stjórn allan tímann., en: No. You are aware and in control the whole time. }
+  - q: { is: "Geta allir farið í dáleiðslu?", en: "Can everyone be hypnotised?" }
+    a: { is: Flestir geta farið í dáleiðslu ef þeir eru tilbúnir að taka þátt í ferlinu., en: Most people can be hypnotised if they are willing to take part in the process. }
+  - q: { is: "Hvað þarf marga tíma?", en: "How many sessions will I need?" }
+    a: { is: Það fer eftir viðfangsefni og markmiðum hvers og eins., en: It depends on what each person wants to work on and their goals. }
+  - q: { is: "Man ég eftir tímanum?", en: "Will I remember the session?" }
+    a: { is: Flestir muna vel eftir því sem fram fer., en: Most people remember well what happens. }
+  - q: { is: "Er dáleiðsla fyrir mig?", en: "Is hypnotherapy for me?" }
+    a: { is: "Dáleiðsla getur hentað þeim sem vilja vinna með kvíða, streitu, áföll, sjálfsefa, samskiptaerfiðleika eða önnur mynstur sem hafa áhrif á líðan og lífsgæði.", en: "Hypnotherapy can suit people who want to work with anxiety, stress, trauma, self-doubt, difficulties in relationships or other patterns that affect their wellbeing and quality of life." }
+  - q: { is: "Hvað ef ég veit ekki nákvæmlega hvað ég þarf að vinna með?", en: "What if I don't know exactly what I need to work on?" }
+    a: { is: "Það er algengara en margir halda. Margir finna einfaldlega að eitthvað er ekki eins og það gæti verið, án þess að geta sett nákvæmlega fingurinn á hvað það er. Hluti af meðferðarferlinu felst í að skoða það saman og finna út hvar er best að byrja.", en: "That is more common than many people think. Many simply feel that something isn't as it could be, without being able to put their finger on exactly what it is. Part of the process is exploring that together and finding the best place to start." }

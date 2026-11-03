@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from "macros.html" import price_box %}
+{% block title %}{{ t(page.title) }} · {{ site.name }}{% endblock %}
+{% block description %}{{ t(page.lead) }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>{{ t(page.title) }}</h1>
+    <p class="lead">{{ t(page.lead) }}</p>
+  </div>
+</section>
+
+<div class="wrap service-grid">
+  <div class="prose">
+    {% for sec in page.sections %}
+    <section>
+      <h2>{{ t(sec.heading) }}</h2>
+      {{ md(sec.body) }}
+    </section>
+    {% endfor %}
+
+    {% if page.faq %}
+    <section id="spurningar">
+      <h2>{{ t(page.faq_heading) }}</h2>
+      {% for f in page.faq %}
+      <details class="faq">
+        <summary>{{ t(f.q) }}</summary>
+        <p>{{ t(f.a) }}</p>
+      </details>
+      {% endfor %}
+    </section>
+    {% else %}
+    <p><a class="link" href="{{ url('klinisk-daleidsla') }}#spurningar">{{ t(s.faq_link) }} →</a></p>
+    {% endif %}
+  </div>
+
+  <aside class="side">
+    {{ price_box(page, t, s, url, key) }}
+    {% for k, svc in services.items() if k != key %}
+    <div class="card soft cross">
+      <p class="eyebrow">{{ t(s.other_service) }}</p>
+      <h3><a href="{{ url(k) }}">{{ t(svc.title) }}</a></h3>
+      <p>{{ t(svc.lead) }}</p>
+      <p class="price"><span class="amount">{{ svc.price.amount }}</span> <span class="muted">· {{ t(svc.price.duration) }}</span></p>
+    </div>
+    {% endfor %}
+  </aside>
+</div>
+{% endblock %}

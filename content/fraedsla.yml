@@ -1,0 +1,25 @@
+# Fræðsla (courses, coming soon). The story below is a short stand-in:
+# Emilia writes her own (why she wants to teach) before launch.
+title:
+  is: Fræðsla
+  en: Learning
+coming_soon:
+  is: Námskeið eru í undirbúningi
+  en: Courses are on their way
+body:
+  is: |
+    Ég er að undirbúa námskeið þar sem ég deili því sem ég hef lært í starfi mínu með fólki.
+
+    Skráðu þig á biðlistann og þú verður meðal þeirra fyrstu til að frétta þegar námskeiðin fara af stað.
+  en: |
+    I am preparing courses where I will share what I have learned in my work with people.
+
+    Join the waiting list and you will be among the first to hear when the courses begin.
+# Photo of Emilia teaching or with a group. Empty = no photo shown.
+photo: ""
+photo_alt:
+  is: Emilia á námskeiði
+  en: Emilia teaching a group
+form_heading:
+  is: Biðlisti
+  en: Waiting list

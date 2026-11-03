@@ -1,0 +1,186 @@
+# Pages CMS configuration (pagescms.org). DRAFT, validate against a live Pages CMS install before handover.
+# Labels are Icelandic because Emilia edits in Icelandic; field names stay English for build.py.
+# Every text is a pair: Íslenska + English. YAML anchors (&is_en, *is_en) reuse the pair definitions.
+
+settings:
+  commit:
+    identity: user
+
+media:
+  input: media
+  output: /media
+  rename: true
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  # ---------------- Forsíða + Um mig ----------------
+  - name: home
+    label: "Forsíða og Um mig"
+    type: file
+    path: content/home.yml
+    format: yaml
+    fields:
+      - name: hero
+        label: "Efst á forsíðu"
+        type: object
+        fields:
+          - name: intro
+            label: "Inngangur undir slagorðinu"
+            type: object
+            fields: &is_en_text
+              - { name: is, label: "Íslenska", type: text }
+              - { name: en, label: "English", type: text }
+      - name: offer
+        label: "Hvað býð ég upp á"
+        type: object
+        fields:
+          - { name: heading, label: "Fyrirsögn", type: object, fields: &is_en
+              [ { name: is, label: "Íslenska", type: string }, { name: en, label: "English", type: string } ] }
+          - { name: body, label: "Texti (auð lína á milli málsgreina)", type: object, fields: *is_en_text }
+          - { name: works_with_heading, label: "Fyrirsögn listans", type: object, fields: *is_en }
+          - { name: works_with, label: "Ég vinn meðal annars með (listi)", type: object, list: true, fields: *is_en }
+      - name: why
+        label: "Af hverju velja Fræið?"
+        type: object
+        fields:
+          - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
+          - { name: body, label: "Texti", type: object, fields: *is_en_text }
+      - name: about
+        label: "Um mig"
+        type: object
+        fields:
+          - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
+          - { name: photo, label: "Mynd af þér", type: image, description: "Upprétt mynd, a.m.k. 1200 px á hæð" }
+          - { name: photo_alt, label: "Lýsing á myndinni (fyrir skjálesara)", type: object, fields: *is_en }
+          - { name: body, label: "Texti um þig", type: object, fields: *is_en_text }
+          - { name: where, label: "Hvar þú tekur á móti fólki", type: object, fields: *is_en }
+          - { name: quote, label: "Tilvitnun", type: object, fields: *is_en_text }
+          - { name: education_heading, label: "Fyrirsögn: menntun", type: object, fields: *is_en }
+          - { name: education, label: "Menntun og reynsla (listi)", type: object, list: true, fields: *is_en }
+          - { name: links_heading, label: "Fyrirsögn: fagleg tengsl", type: object, fields: *is_en }
+      - name: name_story
+        label: "Af hverju Fræið? (græni hlutinn neðst)"
+        type: object
+        fields:
+          - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
+          - { name: body, label: "Texti", type: object, fields: *is_en_text }
+          - { name: mottos, label: "Einkunnarorð", type: object, list: true, fields: *is_en_text }
+
+  # ---------------- Meðferðir ----------------
+  - name: klinisk-daleidsla
+    label: "Klínísk dáleiðsla"
+    type: file
+    path: content/klinisk-daleidsla.yml
+    format: yaml
+    fields: &service_fields
+      - { name: title, label: "Heiti", type: object, fields: *is_en }
+      - { name: lead, label: "Stutt lýsing (birtist líka á forsíðu)", type: object, fields: *is_en_text }
+      - name: price
+        label: "Verð og lengd"
+        type: object
+        fields:
+          - { name: amount, label: "Verð", type: string, description: "T.d. 23.000 kr." }
+          - { name: duration, label: "Lengd", type: object, fields: *is_en }
+      - name: sections
+        label: "Kaflar"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.heading.is}" } }
+        fields:
+          - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
+          - { name: body, label: "Texti. Listi: byrjaðu línu á '- '", type: object, fields: *is_en_text }
+      - { name: faq_heading, label: "Fyrirsögn: spurningar", type: object, fields: *is_en }
+      - name: faq
+        label: "Algengar spurningar"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.q.is}" } }
+        fields:
+          - { name: q, label: "Spurning", type: object, fields: *is_en }
+          - { name: a, label: "Svar", type: object, fields: *is_en_text }
+
+  - name: hugraen-endurforritun
+    label: "Hugræn endurforritun"
+    type: file
+    path: content/hugraen-endurforritun.yml
+    format: yaml
+    fields: *service_fields
+
+  # ---------------- Aðrar síður ----------------
+  - name: fraedsla
+    label: "Fræðsla (námskeið)"
+    type: file
+    path: content/fraedsla.yml
+    format: yaml
+    fields:
+      - { name: title, label: "Heiti síðunnar", type: object, fields: *is_en }
+      - { name: coming_soon, label: "Undirfyrirsögn", type: object, fields: *is_en }
+      - { name: body, label: "Texti", type: object, fields: *is_en_text }
+      - { name: photo, label: "Mynd (t.d. þú að kenna)", type: image }
+      - { name: photo_alt, label: "Lýsing á myndinni", type: object, fields: *is_en }
+      - { name: form_heading, label: "Fyrirsögn yfir biðlistanum", type: object, fields: *is_en }
+
+  - name: kyrrd-heima
+    label: "Kyrrð heima (hlutir í búðinni)"
+    type: file
+    path: content/kyrrd-heima.yml
+    format: yaml
+    fields:
+      - { name: title, label: "Heiti síðunnar", type: object, fields: *is_en }
+      - { name: intro, label: "Inngangur", type: object, fields: *is_en_text }
+      - { name: shop_address, label: "Heimilisfang búðarinnar", type: object, fields: *is_en }
+      - { name: opening_hours, label: "Opnunartími", type: object, fields: *is_en_text }
+      - name: objects
+        label: "Hlutir (efst = fyrst á síðunni)"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.name.is}" } }
+        fields:
+          - { name: image, label: "Mynd", type: image, required: true }
+          - { name: name, label: "Heiti", type: object, fields: *is_en }
+          - { name: text, label: "Ein lína um hlutinn", type: object, fields: *is_en_text }
+          - { name: show, label: "Sýna á síðunni", type: boolean, default: true }
+
+  - name: hafa-samband
+    label: "Bóka tíma"
+    type: file
+    path: content/hafa-samband.yml
+    format: yaml
+    fields:
+      - { name: title, label: "Heiti síðunnar", type: object, fields: *is_en }
+      - { name: intro, label: "Inngangur yfir forminu", type: object, fields: *is_en_text }
+
+  - name: blogg
+    label: "Blogg"
+    type: collection
+    path: content/blogg
+    format: yaml-frontmatter
+    filename: "{fields.date}-{primary}.md"
+    view: { fields: [title.is, date], default: { sort: date, order: desc } }
+    fields:
+      - { name: title, label: "Fyrirsögn", type: object, fields: *is_en }
+      - { name: date, label: "Dagsetning", type: date, required: true }
+      - { name: image, label: "Mynd (líka á Facebook þegar greininni er deilt)", type: image, description: "Lárétt mynd, helst 1200 × 630 px" }
+      - { name: excerpt, label: "Stutt kynning (1–2 setningar)", type: object, fields: *is_en_text }
+      - { name: body, label: "Greinin. Auð lína á milli málsgreina; **feitt**, *skáletrað*", type: object, fields: *is_en_text }
+      - { name: show, label: "Birta á síðunni", type: boolean, default: true }
+
+  # ---------------- Almennt ----------------
+  - name: site
+    label: "Símanúmer, netfang og samtök"
+    type: file
+    path: content/site.yml
+    format: yaml
+    fields:
+      - { name: phone, label: "Sími", type: string, required: true }
+      - { name: email, label: "Netfang", type: string, required: true }
+      - { name: address, label: "Heimilisfang", type: object, fields: *is_en }
+      - { name: tagline, label: "Slagorð", type: object, fields: *is_en }
+      - { name: description, label: "Lýsing fyrir Google (ein setning)", type: object, fields: *is_en_text }
+      - { name: reply_hours, label: "Svartími (klst.) undir bókunarforminu", type: number }
+      - name: orgs
+        label: "Fagleg tengsl"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.name}" } }
+        fields:
+          - { name: name, label: "Heiti", type: string, required: true }
+          - { name: role, label: "Hlutverk", type: object, fields: *is_en }
+          - { name: url, label: "Vefslóð", type: string }
+      # name, owner, title_line, domain, form_endpoint: set up by Marina, not edited here.
