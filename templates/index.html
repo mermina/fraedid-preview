@@ -1,21 +1,31 @@
 {% extends "base.html" %}
 {% block main %}
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <h1 class="display">{{ site.name }}</h1>
-      <p class="tagline">{{ t(site.tagline) }}</p>
-      <p class="lead">{{ t(page.hero.intro) }}</p>
-      <a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a>
-    </div>
-    <div class="arch" aria-hidden="true">
-      <img class="mark-img" src="{{ root }}static/logo-mark.png" alt="" width="111" height="111">
-    </div>
+<section class="hero hero-centre">
+  {# soft leaf shadows, as on Emilia's brand board #}
+  <svg width="0" height="0" class="defs" aria-hidden="true">
+    <defs>
+      <filter id="leafsoft"><feGaussianBlur stdDeviation="3.2"/></filter>
+      <g id="branch">
+        <path d="M40 470 C 120 360, 200 260, 340 30" stroke="currentColor" stroke-width="3" fill="none"/>
+        {% for x, y, r in [(110,395,-58),(140,345,40),(172,298,-62),(202,250,36),(232,203,-64),(262,155,32),(290,108,-60),(316,64,26)] %}
+        <path d="M0 0 C 16 -18, 18 -52, 0 -78 C -18 -52, -16 -18, 0 0 Z" transform="translate({{ x }} {{ y }}) rotate({{ r }}) scale(1.15)"/>
+        {% endfor %}
+      </g>
+    </defs>
+  </svg>
+  <svg class="leaf leaf-right" viewBox="0 0 400 500" aria-hidden="true"><g filter="url(#leafsoft)" fill="#a3af9a" color="#a3af9a"><use href="#branch"/></g></svg>
+  <svg class="leaf leaf-left" viewBox="0 0 400 500" aria-hidden="true"><g filter="url(#leafsoft)" fill="#d8ccb7" color="#d8ccb7"><use href="#branch"/></g></svg>
+  <div class="wrap hero-inner">
+    <h1 class="hero-logo"><img src="{{ root }}static/logo-lodrett.png" alt="{{ site.name }}" width="260" height="249"></h1>
+    <div class="divider" aria-hidden="true"><span></span></div>
+    <p class="display">{{ t(site.tagline) }}</p>
+    <p class="lead">{{ t(page.hero.intro) }}</p>
+    <p class="actions"><a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a><a class="btn btn-ghost" href="#medferdir">{{ t(s.hero_more) }}</a></p>
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap two-col offer">
+  <div class="wrap two-col offer" id="medferdir">
     <div class="prose">
       <h2>{{ t(page.offer.heading) }}</h2>
       {{ md(page.offer.body) }}
@@ -25,13 +35,6 @@
       <h3>{{ t(page.offer.works_with_heading) }}</h3>
       <ul class="ticks ticks-2">{% for i in page.offer.works_with %}<li>{{ t(i) }}</li>{% endfor %}</ul>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap narrow prose">
-    <h2>{{ t(page.why.heading) }}</h2>
-    <p>{{ t(page.why.body) }}</p>
   </div>
 </section>
 

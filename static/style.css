@@ -130,19 +130,31 @@ h3, .h3 { font-size: 1.45rem; }
 @media (min-width: 900px) { .page-head { padding: 80px 0 40px; } }
 .soon { margin-top: -.2rem; }
 
-/* hero */
-.hero { padding: 24px 0 56px; }
-.hero-grid { display: grid; gap: 32px; align-items: center; }
-.hero-text { order: 2; }
-.arch { order: 1; background: var(--sage); border-radius: 999px 999px 0 0; aspect-ratio: 5 / 4; display: grid; place-items: center; max-height: 260px; }
-.mark { width: 112px; height: 112px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font: italic 400 4.2rem/1 var(--serif); color: #585550; box-shadow: inset 0 0 0 2px #585550, inset 0 0 0 7px var(--bg), inset 0 0 0 8px #585550; padding-bottom: 8px; }
+/* hero: centred logo with soft leaf shadows (option 2, Marina 3 Nov) */
+.hero-centre { position: relative; overflow: hidden; text-align: center; padding: 40px 0 72px; }
+.hero-centre .defs { position: absolute; }
+.hero-inner { position: relative; }
+.hero-logo { margin: 0 auto 6px; }
+.hero-logo img { width: 190px; height: auto; margin: 0 auto; }
+.hero-centre .display { font-size: clamp(2.1rem, 5vw, 3.3rem); font-weight: 400; margin: 0 0 .6rem; }
+.hero-centre .lead { margin: 0 auto 1.8rem; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 0; }
+.leaf { position: absolute; pointer-events: none; }
+.leaf-right { right: -170px; top: -40px; width: 360px; opacity: .3; }
+.leaf-left { left: -150px; bottom: -150px; width: 340px; opacity: .35; transform: scaleX(-1) rotate(10deg); }
+/* her line-and-dot divider */
+.divider { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 1.1rem 0 1.3rem; }
+.divider::before, .divider::after { content: ""; height: 1px; width: 70px; background: var(--sand); }
+.divider span { width: 7px; height: 7px; border-radius: 50%; background: var(--sand); }
 @media (min-width: 860px) {
-  .hero { padding: 48px 0 96px; }
-  .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 48px; }
-  .hero-text { order: 1; }
-  .arch { order: 2; aspect-ratio: 4 / 5; max-height: 560px; }
-  .mark { width: 170px; height: 170px; font-size: 6.4rem; }
+  .hero-centre { padding: 64px 0 112px; }
+  .hero-logo img { width: 230px; }
+  .leaf-right { right: -60px; top: -30px; width: 520px; opacity: .55; }
+  .leaf-left { left: -90px; bottom: -130px; width: 440px; opacity: .45; }
 }
+/* On the home page the big logo is the hero, so the small header logo only appears once you scroll */
+.page-index .site-header .brand { transition: opacity .25s; }
+.page-index .site-header:not(.scrolled) .brand { opacity: 0; pointer-events: none; }
 
 /* layout helpers */
 .two-col { display: grid; gap: 32px; align-items: start; }
@@ -250,8 +262,6 @@ textarea { resize: vertical; }
 /* Her real logo in the header; the hero shows her sprout mark */
 .brand-logo { height: 54px; width: auto; display: block; }
 @media (max-width: 420px) { .brand-logo { height: 44px; } }
-.mark-img { width: 128px; height: 128px; border-radius: 50%; background: var(--bg); padding: 10px; box-shadow: 0 0 0 7px var(--bg); }
-@media (min-width: 860px) { .mark-img { width: 150px; height: 150px; } }
 /* Organisation logos (Um mig), as in her Framer draft */
 .org-logo { display: block; margin-bottom: 8px; }
 .org-logo img { height: 64px; width: auto; max-width: 240px; object-fit: contain; background: #fff; padding: 8px 12px; border-radius: 8px; }

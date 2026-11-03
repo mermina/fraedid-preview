@@ -16,6 +16,7 @@ nav:
   hafa-samband: { is: Bóka tíma, en: Book a session }
 book: { is: Bóka tíma, en: Book a session }
 read_more: { is: Lesa meira, en: Read more }
+hero_more: { is: Kynntu þér meðferðirnar, en: About the treatments }
 services_heading: { is: Meðferðir, en: Treatments }
 price: { is: Verð, en: Price }
 other_service: { is: Kynntu þér líka, en: See also }
