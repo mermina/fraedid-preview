@@ -33,7 +33,6 @@
     <a class="wordmark" href="{{ url('index') }}" aria-label="{{ site.name }}, {{ t(s.home) }}">{{ site.name }}</a>
     <nav class="nav" id="nav" aria-label="{{ t(s.menu) }}">
       <ul>
-        <li><a href="{{ url('index') }}#um-mig">{{ t(s.nav.about) }}</a></li>
         {% for k in nav %}
         <li><a href="{{ url(k) }}"{% if k == key %} aria-current="page"{% endif %}{% if k == 'hafa-samband' %} class="nav-book"{% endif %}>{{ t(s.nav[k]) }}</a></li>
         {% endfor %}

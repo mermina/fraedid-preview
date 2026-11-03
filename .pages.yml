@@ -15,7 +15,7 @@ media:
 content:
   # ---------------- Forsíða + Um mig ----------------
   - name: home
-    label: "Forsíða og Um mig"
+    label: "Forsíða"
     type: file
     path: content/home.yml
     format: yaml
@@ -45,19 +45,6 @@ content:
         fields:
           - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
           - { name: body, label: "Texti", type: object, fields: *is_en_text }
-      - name: about
-        label: "Um mig"
-        type: object
-        fields:
-          - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
-          - { name: photo, label: "Mynd af þér", type: image, description: "Upprétt mynd, a.m.k. 1200 px á hæð" }
-          - { name: photo_alt, label: "Lýsing á myndinni (fyrir skjálesara)", type: object, fields: *is_en }
-          - { name: body, label: "Texti um þig", type: object, fields: *is_en_text }
-          - { name: where, label: "Hvar þú tekur á móti fólki", type: object, fields: *is_en }
-          - { name: quote, label: "Tilvitnun", type: object, fields: *is_en_text }
-          - { name: education_heading, label: "Fyrirsögn: menntun", type: object, fields: *is_en }
-          - { name: education, label: "Menntun og reynsla (listi)", type: object, list: true, fields: *is_en }
-          - { name: links_heading, label: "Fyrirsögn: fagleg tengsl", type: object, fields: *is_en }
       - name: name_story
         label: "Af hverju Fræið? (græni hlutinn neðst)"
         type: object
@@ -65,6 +52,23 @@ content:
           - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
           - { name: body, label: "Texti", type: object, fields: *is_en_text }
           - { name: mottos, label: "Einkunnarorð", type: object, list: true, fields: *is_en_text }
+
+  # ---------------- Um mig ----------------
+  - name: um-mig
+    label: "Um mig"
+    type: file
+    path: content/um-mig.yml
+    format: yaml
+    fields:
+      - { name: heading, label: "Fyrirsögn", type: object, fields: *is_en }
+      - { name: photo, label: "Mynd af þér", type: image, description: "Upprétt mynd, a.m.k. 1200 px á hæð" }
+      - { name: photo_alt, label: "Lýsing á myndinni (fyrir skjálesara)", type: object, fields: *is_en }
+      - { name: body, label: "Texti um þig", type: object, fields: *is_en_text }
+      - { name: where, label: "Hvar þú tekur á móti fólki", type: object, fields: *is_en }
+      - { name: quote, label: "Tilvitnun", type: object, fields: *is_en_text }
+      - { name: education_heading, label: "Fyrirsögn: menntun", type: object, fields: *is_en }
+      - { name: education, label: "Menntun og reynsla (listi)", type: object, list: true, fields: *is_en }
+      - { name: links_heading, label: "Fyrirsögn: fagleg tengsl", type: object, fields: *is_en }
 
   # ---------------- Meðferðir ----------------
   - name: klinisk-daleidsla

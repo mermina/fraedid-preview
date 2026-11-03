@@ -5,7 +5,7 @@ menu: { is: Valmynd, en: Menu }
 close: { is: Loka, en: Close }
 home: { is: Forsíða, en: Home }
 nav:
-  about: { is: Um mig, en: About me }
+  um-mig: { is: Um mig, en: About me }
   klinisk-daleidsla: { is: Klínísk dáleiðsla, en: Clinical hypnotherapy }
   hugraen-endurforritun: { is: Hugræn endurforritun, en: Hugræn endurforritun }
   fraedsla: { is: Fræðsla, en: Learning }

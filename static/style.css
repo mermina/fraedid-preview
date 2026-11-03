@@ -204,3 +204,6 @@ textarea { resize: vertical; }
 @media (min-width: 760px) { .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; } }
 .footer-grid p { margin: 0; }
 .footer-base { border-top: 1px solid #4a4a47; margin-top: 32px; padding-top: 18px; font-size: .85rem; }
+
+.about-page { padding-top: 48px; }
+.about-page h1 { font-size: clamp(2.2rem, 5vw, 3rem); }

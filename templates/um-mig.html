@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ t(s.nav['um-mig']) }} · {{ site.name }}{% endblock %}
+{% block description %}{{ site.owner }}, {{ t(site.title_line) }}. {{ t(page.where) }}{% endblock %}
+{% block main %}
+<section class="section about about-page" aria-labelledby="um-mig-h">
+  <div class="wrap about-grid">
+    <figure class="portrait">
+      {% set photo = img(page.photo, 900) %}
+      {% if photo %}
+      <img src="{{ root }}{{ photo }}" alt="{{ t(page.photo_alt) }}" width="900" height="1125" loading="lazy">
+      {% else %}
+      <div class="photo-placeholder" role="img" aria-label="{{ t(page.photo_alt) }}"><span>{{ site.owner }}</span></div>
+      {% endif %}
+    </figure>
+    <div class="prose">
+      <h1 id="um-mig-h">{{ t(page.heading) }}</h1>
+      {{ md(page.body) }}
+      <p class="where">{{ t(page.where) }}</p>
+      <blockquote class="quote">{{ t(page.quote) }}</blockquote>
+      <p class="signature">{{ site.owner }}<br><span class="muted">{{ t(site.title_line) }}</span></p>
+    </div>
+  </div>
+  <div class="wrap two-col about-facts">
+    <div class="card soft">
+      <h3>{{ t(page.education_heading) }}</h3>
+      <ul class="ticks">{% for i in page.education %}<li>{{ t(i) }}</li>{% endfor %}</ul>
+    </div>
+    <div class="card soft">
+      <h3>{{ t(page.links_heading) }}</h3>
+      <ul class="orgs">
+        {% for o in site.orgs %}
+        <li><a href="{{ o.url }}" rel="noopener" target="_blank">{{ o.name }}</a><span class="muted">{{ t(o.role) }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

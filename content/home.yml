@@ -1,4 +1,4 @@
-# Forsíða + Um mig (one page). Texts: Emilia, "Fræið heimasíðan uppfært.docx" (3 Nov 2026).
+# Forsíða. Texts: Emilia, "Fræið heimasíðan uppfært.docx" (3 Nov 2026).
 # English drafted from her Icelandic; Emilia checks before launch.
 hero:
   intro:
@@ -40,52 +40,6 @@ why:
   body:
     is: Í Fræinu legg ég áherslu á að skapa öruggt og traust rými þar sem þú færð að vinna á þínum hraða. Hver meðferð er einstaklingsmiðuð og tekur mið af þínum þörfum, markmiðum og líðan. Ég legg áherslu á hlustun, fagmennsku og trúnað ásamt yfir tuttugu ára reynslu af vinnu með einstaklingum og fjölskyldum. Markmiðið er ekki aðeins að draga úr einkennum heldur að hjálpa þér að skilja rætur áskorana þinna og styðja þig í að skapa varanlegar breytingar.
     en: At Fræið I focus on creating a safe and trusting space where you can work at your own pace. Each treatment is tailored to you and takes your needs, goals and wellbeing into account. I put weight on listening, professionalism and confidentiality, along with more than twenty years' experience of working with individuals and families. The aim is not only to ease symptoms but to help you understand the roots of your challenges and support you in creating lasting change.
-
-about:
-  heading:
-    is: Manneskjan á bak við Fræið
-    en: The person behind Fræið
-  # Photo of Emilia (portrait, at least 1200 px tall). Empty = placeholder.
-  photo: ""
-  photo_alt:
-    is: Emilia Christina Gylfadóttir
-    en: Emilia Christina Gylfadóttir
-  body:
-    is: |
-      Ég heiti Emilia Christina og er klínískur dáleiðari og eigandi Fræsins meðferðarstofu.
-
-      Ég sérhæfi mig í Hugrænni endurforritun og hef sérstakan áhuga á sjálfsmynd, samskiptum og tengslum og því hvernig lífsreynsla okkar mótar hugsanir, tilfinningar og hegðun. Í yfir tvo áratugi hef ég starfað með einstaklingum og fjölskyldum í fjölbreyttum hlutverkum á sviði stuðnings, umönnunar og ráðgjafar í fjölbreyttum og oft krefjandi aðstæðum. Sú reynsla hefur gefið mér dýrmæta innsýn í ólíkar aðstæður fólks og kennt mér að á bak við hverja áskorun leynist saga, reynsla og mynstur sem vert er að skilja, því þar liggur oft lykillinn að raunverulegum og varanlegum breytingum.
-
-      Með klínískri dáleiðslu og Hugrænni endurforritun styð ég fólk í að skilja sjálft sig betur, losa um það sem þjónar því ekki lengur og skapa jákvæðar og varanlegar breytingar.
-
-      Samhliða rekstri Fræsins starfa ég sem ráðgjafi í málefnum fatlaðs fólks. Ég sit jafnframt í stjórn Félags klínískra dáleiðenda og í stjórn Foreldra- og styrktarfélags heyrnarlausra (FSFH).
-    en: |
-      My name is Emilia Christina. I am a clinical hypnotherapist and the owner of Fræið therapy practice.
-
-      I specialise in Hugræn endurforritun (cognitive reprogramming) and have a particular interest in self-image, communication and relationships, and in how our life experiences shape our thoughts, feelings and behaviour. For more than two decades I have worked with individuals and families in many roles in support, care and counselling, often in demanding circumstances. That experience has given me valuable insight into people's different situations, and taught me that behind every challenge lies a story, experiences and patterns worth understanding, because that is often where the key to real and lasting change lies.
-
-      Through clinical hypnotherapy and Hugræn endurforritun I support people in understanding themselves better, letting go of what no longer serves them and creating positive and lasting change.
-
-      Alongside running Fræið, I work as an adviser on disability services. I also sit on the board of Félag klínískra dáleiðenda (the Association of Clinical Hypnotherapists) and on the board of Foreldra- og styrktarfélag heyrnarlausra (FSFH), the parents' association for the deaf.
-  where:
-    is: Ég tek á móti þér í Ármúla 23.
-    en: I see clients at Ármúli 23, Reykjavík.
-  quote:
-    is: Raunveruleg breyting felst ekki í því að verða einhver annar, heldur í því að skilja sjálfan sig betur og finna leiðina aftur að sér.
-    en: Real change isn't about becoming someone else, but about understanding yourself better and finding your way back to yourself.
-  education_heading:
-    is: Menntun og reynsla
-    en: Education and experience
-  education:
-    - { is: Klínískur dáleiðari frá Dáleiðsluskóla Íslands, en: Clinical hypnotherapist, trained at Dáleiðsluskóli Íslands }
-    - { is: BA-gráða í félagsráðgjöf, en: BA in social work }
-    - { is: Meistaragráða í mannauðsstjórnun, en: Master's degree in human resource management }
-    - { is: Diplóma í opinberri stjórnsýslu, en: Diploma in public administration }
-    - { is: Gottman Level 1 þjálfun í samskiptum og tengslum, en: Gottman Method Level 1 training in communication and relationships }
-    - { is: Yfir 20 ára reynsla af stuðningi, ráðgjöf og vinnu með einstaklingum og fjölskyldum, en: More than 20 years' experience of support, counselling and work with individuals and families }
-  links_heading:
-    is: Fagleg tengsl
-    en: Professional memberships
 
 name_story:
   heading:
