@@ -7,7 +7,7 @@ Run:  python3 build.py            (launch build: canonical URLs, sitemap, CNAME)
       python3 build.py --draft    (preview: noindex, no CNAME/sitemap)
       python3 build.py --draft --local   (also shows hidden blog posts; never deploy this)
 """
-import os, sys, glob, shutil, datetime
+import os, sys, glob, shutil, datetime, hashlib
 import yaml, markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
@@ -86,7 +86,11 @@ def main():
 
     env = Environment(loader=FileSystemLoader(os.path.join(ROOT, "templates")),
                       autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
-    env.globals.update(img=img)
+    # Version stamp for style.css/site.js: changes whenever they change, so browsers
+    # don't keep showing an old cached copy (GitHub Pages caches files for 10 minutes).
+    stamp = hashlib.md5(b"".join(open(os.path.join(ROOT, "static", f), "rb").read()
+                                  for f in sorted(os.listdir(os.path.join(ROOT, "static"))))).hexdigest()[:8]
+    env.globals.update(img=img, v=stamp)
 
     def render(template, outrel, lang, key, root=None, **ctx):
         if root is None:
