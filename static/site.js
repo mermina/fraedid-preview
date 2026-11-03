@@ -3,9 +3,10 @@
   // ---- menu ----
   var header = document.querySelector(".site-header");
   var btn = document.querySelector(".menu-btn");
+  var setOpen = function () {};
   if (btn) {
     var label = btn.querySelector(".menu-label");
-    var setOpen = function (open) {
+    setOpen = function (open) {
       header.classList.toggle("menu-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
       label.textContent = open ? btn.dataset.close : btn.dataset.open;
@@ -14,6 +15,22 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
     document.querySelectorAll(".nav a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
   }
+  // Show the full menu only when it fits on one line; otherwise the "Menu" button.
+  // Measured with the full menu switched on for a moment (no repaint in between).
+  var row = document.querySelector(".header-row");
+  var lastWidth = 0;
+  var fit = function () {
+    if (window.innerWidth === lastWidth) return;   // phones fire resize on scroll; only width matters
+    lastWidth = window.innerWidth;
+    var wasCollapsed = header.classList.contains("nav-collapsed");
+    header.classList.remove("nav-collapsed");
+    var tooWide = row.scrollWidth > row.clientWidth + 1;
+    header.classList.toggle("nav-collapsed", tooWide);
+    if (wasCollapsed && !tooWide && btn) setOpen(false);
+  };
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts) document.fonts.ready.then(function () { lastWidth = 0; fit(); });   // re-check once web fonts load
   window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
 
   // ---- booking form: preselect the service from ?medferd=... (the "Bóka tíma" buttons) ----

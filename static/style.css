@@ -45,6 +45,7 @@ h3, .h3 { font-size: 1.45rem; }
 /* ---------- header ---------- */
 .site-header { position: sticky; top: 0; z-index: 30; background: rgba(246, 245, 241, .94); backdrop-filter: blur(6px); border-bottom: 1px solid transparent; }
 .site-header.scrolled { border-bottom-color: var(--line); }
+.site-header .wrap { max-width: 1320px; }   /* header may be wider than the text, so longer (English) menus still fit */
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
 .wordmark { font-size: 2rem; text-decoration: none; margin: 0; letter-spacing: .01em; }
 .wordmark-sm { font-size: 1.6rem; }
@@ -56,7 +57,7 @@ h3, .h3 { font-size: 1.45rem; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand .wordmark { font-size: 1.85rem; letter-spacing: .06em; }
 .brand-tagline { font-size: .68rem; color: var(--muted); letter-spacing: .04em; margin-top: 3px; }
-.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px 22px; align-items: center; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px 20px; align-items: center; }
 .nav a { text-decoration: none; font-size: .93rem; padding: 6px 0; border-bottom: 1px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--ink); }
 .nav a.nav-book { background: var(--btn); color: #fff; padding: 8px 18px; border-radius: 999px; border: 0; }
@@ -73,18 +74,19 @@ h3, .h3 { font-size: 1.45rem; }
 .menu-open .menu-icon::before { transform: translateY(7px) rotate(45deg); }
 .menu-open .menu-icon::after { transform: translateY(-7px) rotate(-45deg); }
 
-/* Below 1100px the menu folds into a panel that opens on the right, under the button (Option B). */
-@media (max-width: 1099px) {
-  .menu-btn { display: inline-flex; }
-  .nav { display: none; position: absolute; top: 100%; right: 0; left: 0; flex-direction: column; align-items: flex-end;
-         background: var(--paper); border-bottom: 1px solid var(--line); padding: 12px 16px 24px; box-shadow: 0 18px 30px -24px rgba(0,0,0,.35); }
-  .menu-open .nav { display: flex; }
-  .nav ul { flex-direction: column; align-items: flex-end; gap: 2px; }
-  .nav a { font-size: 1.05rem; display: inline-block; padding: 9px 0; }
-  .nav a.nav-book { margin-top: 10px; padding: 10px 22px; }
-  .lang { font-size: .95rem; padding-top: 8px; }
-}
-@media (min-width: 700px) and (max-width: 1099px) { .nav { padding-right: 32px; } }
+/* Menu labels never break mid-label. When the full menu doesn't fit on one line (any language,
+   window size or browser zoom), site.js adds .nav-collapsed and the menu folds into a panel that
+   opens on the right, under the button (Option B). */
+.nav a, .brand-tagline { white-space: nowrap; }
+.nav-collapsed .menu-btn { display: inline-flex; }
+.nav-collapsed .nav { display: none; position: absolute; top: 100%; right: 0; left: 0; flex-direction: column; align-items: flex-end;
+       background: var(--paper); border-bottom: 1px solid var(--line); padding: 12px 16px 24px; box-shadow: 0 18px 30px -24px rgba(0,0,0,.35); }
+.nav-collapsed.menu-open .nav { display: flex; }
+.nav-collapsed .nav ul { flex-direction: column; align-items: flex-end; gap: 2px; }
+.nav-collapsed .nav a { font-size: 1.05rem; display: inline-block; padding: 9px 0; }
+.nav-collapsed .nav a.nav-book { margin-top: 10px; padding: 10px 22px; }
+.nav-collapsed .lang { font-size: .95rem; padding-top: 8px; }
+@media (min-width: 700px) { .nav-collapsed .nav { padding-right: 32px; } }
 
 /* ---------- buttons ---------- */
 .btn { display: inline-block; background: var(--btn); color: #fff; text-decoration: none; border: 0; border-radius: 999px; padding: 13px 28px; font: 500 .95rem var(--sans); cursor: pointer; transition: background .15s; }
