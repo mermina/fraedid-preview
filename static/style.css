@@ -1,16 +1,19 @@
 /* Fræið: calm, short, her colours (sampled from her Framer draft, 3 Nov 2026). */
 :root {
-  --bg: #f6f5f1;
+  --bg: #f6f4ef;          /* Ivory, from Emilia's brand board */
   --paper: #fffdf9;
-  --sage: #a6af9c;
+  --sage: #a3af9a;          /* Sage grænn */
+  --taupe: #5f564f;         /* Taupe */
+  --sand: #d8ccb7;          /* Sandur */
+  --lavender: #ddd4ea;      /* Lavender (small accents only) */
   --sage-soft: #e4e7de;
   --sage-ink: #4f5a46;      /* sage dark enough for text (contrast > 6:1 on --bg) */
-  --ink: #31312f;
+  --ink: #333333;           /* Dökkgrár */
   --muted: #64625d;
   --line: #d9d6cd;
   --btn: #333333;
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 14px;
   --wrap: 1120px;
 }
@@ -51,7 +54,7 @@ h3, .h3 { font-size: 1.45rem; }
 .wordmark-sm { font-size: 1.6rem; }
 /* Logo lockup top left, as in Emilia's Framer draft: round mark + name + small tagline */
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand-mark { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center;
+/* old stand-in mark */ .brand-mark { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center;
   font: italic 400 1.7rem/1 var(--serif); color: #585550; padding-bottom: 3px;
   box-shadow: inset 0 0 0 1.5px #585550; background: var(--bg); }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
@@ -243,3 +246,12 @@ textarea { resize: vertical; }
 
 .about-page { padding-top: 48px; }
 .about-page h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+
+/* Her real logo in the header; the hero shows her sprout mark */
+.brand-logo { height: 54px; width: auto; display: block; }
+@media (max-width: 420px) { .brand-logo { height: 44px; } }
+.mark-img { width: 128px; height: 128px; border-radius: 50%; background: var(--bg); padding: 10px; box-shadow: 0 0 0 7px var(--bg); }
+@media (min-width: 860px) { .mark-img { width: 150px; height: 150px; } }
+/* Organisation logos (Um mig), as in her Framer draft */
+.org-logo { display: block; margin-bottom: 8px; }
+.org-logo img { height: 64px; width: auto; max-width: 240px; object-fit: contain; background: #fff; padding: 8px 12px; border-radius: 8px; }

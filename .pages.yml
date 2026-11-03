@@ -187,4 +187,5 @@ content:
           - { name: name, label: "Heiti", type: string, required: true }
           - { name: role, label: "Hlutverk", type: object, fields: *is_en }
           - { name: url, label: "Vefslóð", type: string }
+          - { name: logo, label: "Merki samtakanna", type: image }
       # name, owner, title_line, domain, form_endpoint: set up by Marina, not edited here.

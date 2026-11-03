@@ -29,8 +29,10 @@ orgs:
       is: Meðstjórnandi
       en: Board member
     url: https://kvidalaus.is/um
+    logo: /media/samtok/fkd.png
   - name: Dáleiðslufélagið
     role:
       is: Félagsmaður
       en: Member
     url: https://daleidslufelagid.is/um
+    logo: /media/samtok/daleidslufelagid.jpg

@@ -29,7 +29,7 @@
       <h3>{{ t(page.links_heading) }}</h3>
       <ul class="orgs">
         {% for o in site.orgs %}
-        <li><a href="{{ o.url }}" rel="noopener" target="_blank">{{ o.name }}</a><span class="muted">{{ t(o.role) }}</span></li>
+        <li>{% if o.logo %}<a class="org-logo" href="{{ o.url }}" rel="noopener" target="_blank" tabindex="-1" aria-hidden="true"><img src="{{ root }}{{ img(o.logo, 600) }}" alt="" loading="lazy"></a>{% endif %}<a href="{{ o.url }}" rel="noopener" target="_blank">{{ o.name }}</a><span class="muted">{{ t(o.role) }}</span></li>
         {% endfor %}
       </ul>
     </div>

@@ -47,7 +47,13 @@ def img(src, width=1200):
     if not os.path.exists(outpath) or os.path.getmtime(outpath) < os.path.getmtime(srcpath):
         from PIL import Image, ImageOps
         os.makedirs(os.path.dirname(outpath), exist_ok=True)
-        im = ImageOps.exif_transpose(Image.open(srcpath)).convert("RGB")
+        im = ImageOps.exif_transpose(Image.open(srcpath))
+        if im.mode in ("RGBA", "LA", "P"):   # transparent logos: flatten onto white (JPEG has no transparency)
+            im = im.convert("RGBA")
+            flat = Image.new("RGB", im.size, (255, 255, 255))
+            flat.paste(im, mask=im.split()[-1])
+            im = flat
+        im = im.convert("RGB")
         im.thumbnail((width, width * 2))
         im.save(outpath, "JPEG", quality=82, optimize=True, progressive=True)
     return outrel
