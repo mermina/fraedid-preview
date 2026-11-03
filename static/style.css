@@ -78,10 +78,6 @@ h3, .h3 { font-size: 1.45rem; }
 }
 @media (min-width: 700px) and (max-width: 1099px) { .nav { padding-right: 32px; } }
 
-/* ---------- draft notes ---------- */
-.draft-notes { background: #fff5c2; border: 1px solid #e6d36b; border-radius: 10px; padding: 12px 16px; margin: 12px auto 0; font-size: .9rem; width: calc(100% - 32px); max-width: calc(var(--wrap) - 64px); }
-.draft-notes ul { margin: 6px 0 0; padding-left: 1.2em; }
-
 /* ---------- buttons ---------- */
 .btn { display: inline-block; background: var(--btn); color: #fff; text-decoration: none; border: 0; border-radius: 999px; padding: 13px 28px; font: 500 .95rem var(--sans); cursor: pointer; transition: background .15s; }
 .btn:hover { background: #000; }

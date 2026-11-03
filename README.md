@@ -20,8 +20,8 @@ If an English text is empty, the Icelandic one is shown.
 ```bash
 python3 build.py --draft
 ```
-then open the "fraedid-website" preview (port 8652). `--draft` adds yellow questions for Emilia
-(from `templates/draft-notes.yml`) and tells search engines to stay away. `--local` also shows hidden blog posts.
+then open the "fraedid-website" preview (port 8652). `--draft` tells search engines to stay away.
+`--local` also shows hidden blog posts. Open questions for Emilia: `../output/03.11.2026_questions-for-emilia-preview.md`.
 
 ## Launch checklist (short; full one in SETUP/references/website-go-live-checklist.md)
 1. Repo in **Emilia's** GitHub account; Settings → Pages → Source = GitHub Actions.

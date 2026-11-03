@@ -50,13 +50,6 @@
   </div>
 </header>
 
-{% if notes %}
-<aside class="draft-notes wrap" aria-label="Questions for Emilia">
-  <strong>Preview · questions for Emilia</strong>
-  <ul>{% for n in notes %}<li>{{ n }}</li>{% endfor %}</ul>
-</aside>
-{% endif %}
-
 <main id="main">
 {% block main %}{% endblock %}
 </main>

@@ -4,7 +4,7 @@
 Content is edited by Emilia in Pages CMS; design lives in templates/ and static/.
 Every page is built twice: Icelandic at /, English at /en/.
 Run:  python3 build.py            (launch build: canonical URLs, sitemap, CNAME)
-      python3 build.py --draft    (preview: yellow questions for Emilia, noindex)
+      python3 build.py --draft    (preview: noindex, no CNAME/sitemap)
       python3 build.py --draft --local   (also shows hidden blog posts; never deploy this)
 """
 import os, sys, glob, shutil, datetime
@@ -15,7 +15,7 @@ from markupsafe import Markup
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "_site")
 C = lambda *p: os.path.join(ROOT, "content", *p)
-DRAFT = "--draft" in sys.argv
+DRAFT = "--draft" in sys.argv   # preview: search engines kept away
 LOCAL = "--local" in sys.argv
 LANGS = ["is", "en"]
 
@@ -72,7 +72,6 @@ def page_path(lang, key):
 def main():
     site = load_yml(C("site.yml"))
     strings = load_yml(os.path.join(ROOT, "templates", "strings.yml"))
-    notes = load_yml(os.path.join(ROOT, "templates", "draft-notes.yml")) if DRAFT else {}
     services = {k: load_yml(C(k + ".yml")) for k in ("klinisk-daleidsla", "hugraen-endurforritun")}
 
     posts = [load_post(p) for p in glob.glob(C("blogg", "*.md"))]
@@ -108,7 +107,7 @@ def main():
         html = env.get_template(template).render(
             site=site, s=strings, lang=lang, other=other, key=key, root=root,
             t=t, md=md, url=url, when=when, nav=NAV, services=services,
-            draft=DRAFT, notes=(notes.get("all", []) + notes.get(key, [])) if DRAFT else [],
+            draft=DRAFT,
             path=outrel, **ctx)
         outpath = os.path.join(OUT, outrel, "index.html") if outrel.endswith("/") or outrel == "" \
             else os.path.join(OUT, outrel)
