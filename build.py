@@ -64,7 +64,7 @@ PAGES = [
     ("hafa-samband", "hafa-samband.html", "hafa-samband.yml"),
 ]
 # "medferdir" = the Treatments dropdown holding the two service pages.
-NAV = ["um-mig", "medferdir", "kyrrd-heima", "blogg", "fraedsla", "hafa-samband"]
+NAV = ["index", "um-mig", "medferdir", "kyrrd-heima", "blogg", "fraedsla", "hafa-samband"]
 
 def page_path(lang, key):
     """Path of a page inside _site, e.g. ('en', 'fraedsla') -> 'en/fraedsla/'."""
@@ -125,8 +125,6 @@ def main():
     for lang in LANGS:
         for key, template, content in PAGES:
             page = load_yml(C(content)) if content else {}
-            if key == "index":
-                page["about"] = load_yml(C("um-mig.yml"))   # home shows a teaser of Um mig
             rel = page_path(lang, key)
             render(template, rel, lang, key, page=page, posts=posts,
                    alt_path=page_path("en" if lang == "is" else "is", key))

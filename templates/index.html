@@ -15,30 +15,15 @@
 </section>
 
 <section class="section">
-  <div class="wrap two-col">
+  <div class="wrap two-col offer">
     <div class="prose">
       <h2>{{ t(page.offer.heading) }}</h2>
       {{ md(page.offer.body) }}
+      <p class="text-links">{% for k, svc in services.items() %}<a class="link" href="{{ url(k) }}">{{ t(svc.title) }} →</a>{% endfor %}</p>
     </div>
     <div class="card soft">
       <h3>{{ t(page.offer.works_with_heading) }}</h3>
-      <ul class="ticks">{% for i in page.offer.works_with %}<li>{{ t(i) }}</li>{% endfor %}</ul>
-    </div>
-  </div>
-</section>
-
-<section class="section section-tint" aria-labelledby="medferdir">
-  <div class="wrap">
-    <h2 id="medferdir">{{ t(s.services_heading) }}</h2>
-    <div class="cards">
-      {% for k, svc in services.items() %}
-      <article class="card service-card">
-        <h3><a href="{{ url(k) }}">{{ t(svc.title) }}</a></h3>
-        <p>{{ t(svc.lead) }}</p>
-        <p class="price"><span class="amount">{{ svc.price.amount }}</span> <span class="muted">· {{ t(svc.price.duration) }}</span></p>
-        <p class="card-links"><a class="link" href="{{ url(k) }}">{{ t(s.read_more) }} →</a></p>
-      </article>
-      {% endfor %}
+      <ul class="ticks ticks-2">{% for i in page.offer.works_with %}<li>{{ t(i) }}</li>{% endfor %}</ul>
     </div>
   </div>
 </section>
@@ -47,25 +32,6 @@
   <div class="wrap narrow prose">
     <h2>{{ t(page.why.heading) }}</h2>
     <p>{{ t(page.why.body) }}</p>
-  </div>
-</section>
-
-<section class="section about" aria-labelledby="um-mig-h">
-  <div class="wrap about-grid">
-    <figure class="portrait">
-      {% set photo = img(page.about.photo, 900) %}
-      {% if photo %}
-      <img src="{{ root }}{{ photo }}" alt="{{ t(page.about.photo_alt) }}" width="900" height="1125" loading="lazy">
-      {% else %}
-      <div class="photo-placeholder" role="img" aria-label="{{ t(page.about.photo_alt) }}"><span>{{ site.owner }}</span></div>
-      {% endif %}
-    </figure>
-    <div class="prose">
-      <h2 id="um-mig-h">{{ t(page.about.heading) }}</h2>
-      {{ md(t(page.about.body).split('\n\n')[0]) }}
-      <blockquote class="quote">{{ t(page.about.quote) }}</blockquote>
-      <p><a class="btn btn-ghost" href="{{ url('um-mig') }}">{{ t(s.read_more) }}</a></p>
-    </div>
   </div>
 </section>
 

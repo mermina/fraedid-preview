@@ -158,6 +158,10 @@ h3, .h3 { font-size: 1.45rem; }
 .ticks { list-style: none; padding: 0; margin: 0; }
 .ticks li { padding: 7px 0 7px 26px; position: relative; border-top: 1px solid rgba(49, 49, 47, .1); }
 .ticks li:first-child { border-top: 0; }
+/* Home "Hvað býð ég upp á": text and list side by side at equal weight; list in two columns */
+@media (min-width: 900px) { .two-col.offer { grid-template-columns: 1fr 1fr; align-items: center; } }
+@media (min-width: 560px) { .ticks-2 { columns: 2; column-gap: 28px; } .ticks-2 li { break-inside: avoid; border-top: 0; } }
+.text-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 1.4rem; }
 .ticks li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 10px; height: 10px; border-radius: 50% 0; background: var(--sage-ink); transform: rotate(-45deg); }
 
 /* about */
