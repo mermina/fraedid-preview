@@ -31,3 +31,12 @@ then open the "fraedid-website" preview (port 8652). `--draft` adds yellow quest
 5. Emilia has approved every text in both languages and the soft-claims changes **in writing**.
 6. Real photo of Emilia in `content/home.yml` → `about.photo`; logo files replace the stand-in "f" mark.
 7. Fonts: currently Google Fonts. Consider self-hosting (privacy: visitors' IPs go to Google).
+
+## Preview hosting (temporary, 3 Nov 2026)
+Preview repo: `mermina/fraedid-preview` (public, needed for free GitHub Pages). First-time setup, run in this folder:
+```bash
+gh repo create mermina/fraedid-preview --public --source . --remote origin --push
+gh api -X POST repos/mermina/fraedid-preview/pages -f build_type=workflow
+```
+Preview URL: https://mermina.github.io/fraedid-preview/ (the 404 page's links only work on the real domain).
+At launch: transfer the repo to Emilia's account (Settings → Transfer) or push it to a new repo there.
