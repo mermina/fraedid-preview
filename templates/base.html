@@ -38,7 +38,18 @@
     <nav class="nav" id="nav" aria-label="{{ t(s.menu) }}">
       <ul>
         {% for k in nav %}
+        {% if k == 'medferdir' %}
+        <li class="dd{% if key in services %} is-current{% endif %}">
+          <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-medferdir">{{ t(s.nav.medferdir) }}</button>
+          <ul class="dd-panel" id="dd-medferdir">
+            {% for sk, svc in services.items() %}
+            <li><a href="{{ url(sk) }}"{% if sk == key %} aria-current="page"{% endif %}>{{ t(svc.title) }}<span class="dd-meta">{{ t(svc.price.duration) }} · {{ svc.price.amount }}</span></a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
         <li><a href="{{ url(k) }}"{% if k == key %} aria-current="page"{% endif %}{% if k == 'hafa-samband' %} class="nav-book"{% endif %}>{{ t(s.nav[k]) }}</a></li>
+        {% endif %}
         {% endfor %}
       </ul>
       <p class="lang">

@@ -33,6 +33,16 @@
   if (document.fonts) document.fonts.ready.then(function () { lastWidth = 0; fit(); });   // re-check once web fonts load
   window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
 
+  // ---- Treatments dropdown: click or Enter opens; Escape, outside click or tabbing away closes ----
+  document.querySelectorAll(".dd").forEach(function (dd) {
+    var b = dd.querySelector(".dd-btn");
+    var set = function (open) { dd.classList.toggle("open", open); b.setAttribute("aria-expanded", open ? "true" : "false"); };
+    b.addEventListener("click", function () { set(!dd.classList.contains("open")); });
+    document.addEventListener("click", function (e) { if (!dd.contains(e.target)) set(false); });
+    dd.addEventListener("keydown", function (e) { if (e.key === "Escape") { set(false); b.focus(); } });
+    dd.addEventListener("focusout", function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
+  });
+
   // ---- booking form: preselect the service from ?medferd=... (the "Bóka tíma" buttons) ----
   var pick = new URLSearchParams(location.search).get("medferd");
   if (pick) {

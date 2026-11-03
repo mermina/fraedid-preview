@@ -6,8 +6,9 @@ close: { is: Loka, en: Close }
 home: { is: Forsíða, en: Home }
 nav:
   um-mig: { is: Um mig, en: About me }
+  medferdir: { is: Meðferðir, en: Treatments }
   klinisk-daleidsla: { is: Klínísk dáleiðsla, en: Clinical hypnotherapy }
-  hugraen-endurforritun: { is: Hugræn endurforritun, en: Hugræn endurforritun }
+  hugraen-endurforritun: { is: Hugræn endurforritun, en: Cognitive reprogramming }
   fraedsla: { is: Fræðsla, en: Learning }
   kyrrd-heima: { is: Kyrrð heima, en: Calm at home }
   blogg: { is: Blogg, en: Blog }

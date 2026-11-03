@@ -63,7 +63,8 @@ PAGES = [
     ("blogg", "blogg.html", None),
     ("hafa-samband", "hafa-samband.html", "hafa-samband.yml"),
 ]
-NAV = ["um-mig", "klinisk-daleidsla", "hugraen-endurforritun", "fraedsla", "kyrrd-heima", "blogg", "hafa-samband"]
+# "medferdir" = the Treatments dropdown holding the two service pages.
+NAV = ["um-mig", "medferdir", "kyrrd-heima", "blogg", "fraedsla", "hafa-samband"]
 
 def page_path(lang, key):
     """Path of a page inside _site, e.g. ('en', 'fraedsla') -> 'en/fraedsla/'."""
