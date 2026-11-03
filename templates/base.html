@@ -30,7 +30,11 @@
 <a class="skip" href="#main">{{ t(s.skip) }}</a>
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="wordmark" href="{{ url('index') }}" aria-label="{{ site.name }}, {{ t(s.home) }}">{{ site.name }}</a>
+    <a class="brand" href="{{ url('index') }}" aria-label="{{ site.name }}, {{ t(s.home) }}">
+      {# Stand-in for Emilia's logo mark; replace with her file (static/logo-mark.svg/png) when it arrives. #}
+      <span class="brand-mark" aria-hidden="true">f</span>
+      <span class="brand-text"><span class="wordmark">{{ site.name }}</span><span class="brand-tagline">{{ t(site.tagline) }}</span></span>
+    </a>
     <nav class="nav" id="nav" aria-label="{{ t(s.menu) }}">
       <ul>
         {% for k in nav %}
