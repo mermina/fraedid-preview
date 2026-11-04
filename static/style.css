@@ -301,5 +301,8 @@ textarea { resize: vertical; }
 .social a:hover { color: var(--bg); background: var(--ink); }
 .nav-collapsed .social { padding-top: 6px; }
 
-/* Fræðsla photo: wider crop so it ends level with the waiting-list card (Marina 4 Nov); face + certificate kept in frame */
-@media (min-width: 900px) { .page-grid .rounded { aspect-ratio: 16 / 9; object-position: 50% 46%; margin-top: .4rem; } }
+/* Fræðsla (Marina 4 Nov): taller photo so more of Emilia shows; waiting-list card starts level with the text */
+@media (min-width: 900px) {
+  .page-grid .rounded { aspect-ratio: 4 / 3.4; object-position: 50% 40%; margin-top: .4rem; }
+  .page-grid .card { margin-top: 128px; }
+}
