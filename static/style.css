@@ -383,3 +383,12 @@ textarea { resize: vertical; }
   .hero-arch + .section .offer .ticks li { padding-top: 9px; padding-bottom: 9px; }
   .hero-arch + .section .offer .prose p { font-size: 1rem; }
 }
+/* Big "Fræið" above the tagline (Emilia's Framer draft) + treatment links at the top (Marina 4 Nov) */
+.hero-name { font: 400 18vw/1 var(--serif); letter-spacing: -.01em; margin: 0 0 .1em; }
+.hero-links a { text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color .15s; }
+.hero-links a:hover, .hero-links a:focus-visible { border-bottom-color: var(--sage-ink); }
+@media (min-width: 860px) {
+  .hero-name { font-size: min(calc(8.6vw - 10px), 7.4rem); margin-bottom: .05em; }
+  .hero-arch .eyebrow { margin-bottom: 1.6rem; }
+  .hero-arch .display { margin-bottom: 1.6rem; }
+}

@@ -4,8 +4,11 @@
   <div class="wrap hero-grid">
     <div class="hero-text">
       <div class="hero-copy">
-      <p class="eyebrow">{% for svc in services.values() %}{{ t(svc.title) }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
-      <h1 class="display">{{ t(site.tagline) }}</h1>
+      {# treatment names at the top, each a link to its page (Marina 4 Nov) #}
+      <p class="eyebrow hero-links">{% for k, svc in services.items() %}<a href="{{ url(k) }}">{{ t(svc.title) }}</a>{% if not loop.last %}<span aria-hidden="true"> · </span>{% endif %}{% endfor %}</p>
+      {# big name, as in Emilia's Framer draft #}
+      <h1 class="hero-name">{{ site.name }}</h1>
+      <p class="display">{{ t(site.tagline) }}</p>
       <p class="lead">{% for line in t(page.hero.intro).split('\n') %}{{ line }}{% if not loop.last %}<br class="br-wide"> {% endif %}{% endfor %}</p>
       <p class="actions"><a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a><a class="btn btn-ghost" href="{{ url('um-mig') }}">{{ t(s.nav['um-mig']) }}</a></p>
       </div>
