@@ -16,10 +16,10 @@ body:
 
     Join the waiting list and you will be among the first to hear when the courses begin.
 # Photo of Emilia teaching or with a group. Empty = no photo shown.
-photo: ""
+photo: /media/emilia-skirteini.jpg
 photo_alt:
-  is: Emilia á námskeiði
-  en: Emilia teaching a group
+  is: Emilia með skírteini frá Dáleiðsluskóla Íslands
+  en: Emilia with her certificate from Dáleiðsluskóli Íslands
 form_heading:
   is: Biðlisti
   en: Waiting list

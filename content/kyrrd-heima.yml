@@ -12,9 +12,31 @@ shop_address:
 opening_hours:
   is: ""
   en: ""
-# Objects: add as many as you like; top of the list = first on the page.
-objects: []
-#  - image: /media/kerti.jpg
-#    name: { is: Kerti, en: Candle }
-#    text: { is: Stutt lýsing., en: A short description. }
-#    show: true
+# PREVIEW ONLY (4 Nov 2026): images Emilia "found" for the mood (her Drive, Myndir). They are NOT her
+# products and not cleared for use. Before launch: replace with photos of her own objects, or confirm a licence.
+# (kerti-3 left out: it shows another brand's label.)
+objects:
+  - image: /media/kyrrd-heima/kerti.jpg
+    name: { is: Kerti, en: Candle }
+    source: "unknown source"
+    show: true
+  - image: /media/kyrrd-heima/kerti-2.jpg
+    name: { is: Kerti og þurrkuð blóm, en: Candle and dried flowers }
+    source: "Kaboompics, Karolina Grabowska"
+    show: true
+  - image: /media/kyrrd-heima/mynd-4.jpg
+    name: { is: Kertastjaki og vasi, en: Candle holder and vase }
+    source: "Kaboompics, Karolina Grabowska"
+    show: true
+  - image: /media/kyrrd-heima/olia.jpg
+    name: { is: Ilmolía, en: Essential oil }
+    source: "unknown source"
+    show: true
+  - image: /media/kyrrd-heima/olia-2.jpg
+    name: { is: Ilmolíur, en: Essential oils }
+    source: "unknown source"
+    show: true
+  - image: /media/kyrrd-heima/dagbok-1.jpg
+    name: { is: Dagbók, en: Journal }
+    source: 'marked "Copyright 2021. All rights reserved."'
+    show: true

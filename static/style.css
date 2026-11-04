@@ -252,11 +252,15 @@ textarea { resize: vertical; }
 .site-footer .muted { color: #b5b2aa; }
 .site-footer a { color: #fff; }
 .footer-grid { display: grid; gap: 20px; }
-@media (min-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1.3fr 1fr; } }
+@media (min-width: 760px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; column-gap: 20px; }
+  /* memberships sit on a second row, one under "Fræið" and one under Emilia's name */
+  .footer-orgs { grid-column: 1 / 3; }
+  .footer-orgs ul { grid-template-columns: 1fr 1fr; column-gap: 20px; }
+}
 /* Professional memberships in the footer: logo tile + name + role, linked to the organisation */
 .footer-label { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: #b5b2aa; margin-bottom: 10px !important; }
-.footer-orgs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.footer-orgs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px 20px; }
 .footer-orgs a { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .footer-orgs img { height: 40px; width: 92px; object-fit: contain; background: #fff; padding: 4px 6px; border-radius: 6px; flex: none; }
 .footer-orgs span { display: flex; flex-direction: column; line-height: 1.35; }
@@ -274,3 +278,9 @@ textarea { resize: vertical; }
 /* Organisation logos (Um mig), as in her Framer draft */
 .org-logo { display: block; margin-bottom: 8px; }
 .org-logo img { height: 64px; width: auto; max-width: 240px; object-fit: contain; background: #fff; padding: 8px 12px; border-radius: 8px; }
+
+/* Fræðsla: heading, text and photo on the left; waiting-list card starts level with the heading */
+.page-grid { padding-top: 48px; padding-bottom: 80px; }
+@media (min-width: 900px) { .page-grid { padding-top: 80px; } .page-grid .card { position: sticky; top: 96px; } }
+.page-grid h1 { margin-bottom: .2rem; }
+.page-grid .soon { margin-bottom: 1.6rem; }

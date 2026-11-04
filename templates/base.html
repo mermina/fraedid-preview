@@ -42,7 +42,7 @@
           <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-medferdir">{{ t(s.nav.medferdir) }}</button>
           <ul class="dd-panel" id="dd-medferdir">
             {% for sk, svc in services.items() %}
-            <li><a href="{{ url(sk) }}"{% if sk == key %} aria-current="page"{% endif %}>{{ t(svc.title) }}<span class="dd-meta">{{ t(svc.price.duration) }} · {{ svc.price.amount }}</span></a></li>
+            <li><a href="{{ url(sk) }}"{% if sk == key %} aria-current="page"{% endif %}>{{ t(svc.title) }}</a></li>
             {% endfor %}
           </ul>
         </li>
@@ -76,6 +76,11 @@
     <div>
       <p>{{ site.owner }}<br>{{ t(site.title_line) }}</p>
     </div>
+    <div>
+      <p>{{ t(site.address) }}<br>
+      <a href="tel:+354{{ site.phone|replace('-', '') }}">{{ site.phone }}</a><br>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.facebook %}<br><a href="{{ site.facebook }}" rel="noopener" target="_blank">Facebook</a>{% endif %}</p>
+    </div>
     <div class="footer-orgs">
       <p class="footer-label">{{ t(s.orgs_heading) }}</p>
       <ul>
@@ -83,11 +88,6 @@
         <li><a href="{{ o.url }}" rel="noopener" target="_blank">{% if o.logo %}<img src="{{ root }}{{ img(o.logo, 600) }}" alt="" width="120" height="40" loading="lazy">{% endif %}<span>{{ o.name }}<small>{{ t(o.role) }}</small></span></a></li>
         {% endfor %}
       </ul>
-    </div>
-    <div>
-      <p>{{ t(site.address) }}<br>
-      <a href="tel:+354{{ site.phone|replace('-', '') }}">{{ site.phone }}</a><br>
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </div>
   </div>
   <div class="wrap footer-base muted">© {{ 2026 }} {{ site.name }} meðferðarstofa</div>

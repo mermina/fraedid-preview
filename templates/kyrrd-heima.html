@@ -32,6 +32,7 @@
     {% else %}
     <p>{{ t(s.shop_where_missing) }} <a href="tel:+354{{ site.phone|replace('-', '') }}">{{ site.phone }}</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     {% endif %}
+    {% if site.facebook %}<p>{{ t(s.facebook_follow) }} <a href="{{ site.facebook }}" rel="noopener" target="_blank">Facebook</a></p>{% endif %}
   </div>
 </div>
 {% endblock %}

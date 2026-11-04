@@ -134,6 +134,7 @@ content:
           - { name: image, label: "Mynd", type: image, required: true }
           - { name: name, label: "Heiti", type: object, fields: *is_en }
           - { name: text, label: "Ein lína um hlutinn", type: object, fields: *is_en_text }
+          - { name: source, label: "Hvaðan er myndin? (ekki sýnt á síðunni)", type: string, description: "T.d. eigin mynd, eða ljósmyndari + leyfi" }
           - { name: show, label: "Sýna á síðunni", type: boolean, default: true }
 
   - name: hafa-samband
@@ -169,6 +170,7 @@ content:
     fields:
       - { name: phone, label: "Sími", type: string, required: true }
       - { name: email, label: "Netfang", type: string, required: true }
+      - { name: facebook, label: "Facebook-síða (slóð)", type: string }
       - { name: address, label: "Heimilisfang", type: object, fields: *is_en }
       - { name: tagline, label: "Slagorð", type: object, fields: *is_en }
       - { name: description, label: "Lýsing fyrir Google (ein setning)", type: object, fields: *is_en_text }

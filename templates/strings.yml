@@ -17,6 +17,7 @@ nav:
 book: { is: Bóka tíma, en: Book a session }
 read_more: { is: Lesa meira, en: Read more }
 orgs_heading: { is: Fagleg tengsl, en: Professional memberships }
+facebook_follow: { is: "Fylgstu með Fræinu á", en: "Follow Fræið on" }
 hero_more: { is: Kynntu þér meðferðirnar, en: About the treatments }
 services_heading: { is: Meðferðir, en: Treatments }
 price: { is: Verð, en: Price }

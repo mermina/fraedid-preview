@@ -4,7 +4,7 @@ heading:
   is: Manneskjan á bak við Fræið
   en: The person behind Fræið
 # Photo of Emilia (portrait, at least 1200 px tall). Empty = placeholder.
-photo: ""
+photo: /media/emilia-portrett.jpg
 photo_alt:
   is: Emilia Christina Gylfadóttir
   en: Emilia Christina Gylfadóttir
