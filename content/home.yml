@@ -4,7 +4,8 @@ hero:
   # Photo in the arch on the right (portrait works best).
   # 4 Nov (Marina): mood photo "mynd 4" from Emilia's Drive = Kaboompics / Karolina Grabowska (free licence).
   # Previous choice: /media/emilia-skirteini.jpg (Emilia with her certificate), focus 50% 45%.
-  photo: /media/kyrrd-heima/mynd-4.jpg
+  # forsida-kyrrd.jpg = mynd-4 toned to the site palette (pink removed, ivory/sage), Marina 4 Nov
+  photo: /media/forsida-kyrrd.jpg
   photo_alt:
     is: Kerti, þurrkuð blóm og bók í rólegu rými
     en: A candle, dried flowers and a book in a calm room
