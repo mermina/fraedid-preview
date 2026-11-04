@@ -311,6 +311,16 @@ textarea { resize: vertical; }
 /* Phones: bigger tap targets for the contact links (footer, Kyrrð heima, contact page) */
 @media (max-width: 759px) { .footer-contact a, .visit a, .side a[href^="tel"], .side a[href^="mailto"] { display: inline-block; padding: 7px 0; } }
 
-/* Home headline on one line (Marina 4 Nov): size follows the screen width so it never wraps */
+/* Home hero text like option 1 (Marina 4 Nov): bigger, vertically centred beside the arch;
+   headline always on one line (size follows the screen width). Less empty space under the hero. */
 .hero-arch .display { white-space: nowrap; font-size: 7.4vw; }
-@media (min-width: 860px) { .hero-arch .display { font-size: min(3.3vw, 3.4rem); } }
+.hero-arch { padding-bottom: 24px; }
+.hero-arch + .section { padding-top: 40px; }
+@media (min-width: 860px) {
+  .hero-arch { padding: 40px 0 16px; }
+  .hero-arch .hero-grid { grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
+  .hero-arch .display { font-size: min(3.6vw, 3.5rem); margin-bottom: 1rem; }
+  .hero-arch .lead { font-size: 1.15rem; line-height: 1.7; }
+  .hero-arch .eyebrow { margin-bottom: 1.1rem; }
+  .hero-arch + .section { padding-top: 40px; }
+}
