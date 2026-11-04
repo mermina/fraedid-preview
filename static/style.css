@@ -336,3 +336,35 @@ textarea { resize: vertical; }
 .arch-mark img { width: 82%; height: auto; }
 /* Line breaks Emilia types in the intro apply on wider screens; on phones the sentence flows */
 @media (max-width: 599px) { .br-wide { display: none; } }
+
+/* Home top, round 3 (Marina 4 Nov): fill the empty space.
+   Bigger copy and buttons; text centred beside the arch; full-width dividing line level with the
+   bottom of the arch; next section starts close under it; arch + card a bit wider (same edges). */
+.hero-arch .actions { gap: 14px; }
+.hero-arch .btn { min-width: 170px; text-align: center; }
+.hero-divider { justify-content: stretch; margin: 2rem 0 0; }
+.hero-divider::before, .hero-divider::after { flex: 1; width: auto; }
+@media (min-width: 860px) {
+  .hero-arch .hero-grid, .hero-arch + .section .two-col.offer { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .hero-arch .hero-grid { align-items: stretch; }
+  .hero-arch .hero-text { display: flex; flex-direction: column; padding: 12px 0; }
+  .hero-arch .hero-copy { margin: auto 0; }
+  .hero-divider { margin-top: 0; }
+  .hero-arch .display { font-size: min(calc(5.2vw - 10px), 3.82rem); margin-bottom: 1.3rem; }
+  .hero-arch .lead { font-size: clamp(1.2rem, 1.6vw, 1.5rem); line-height: 1.65; margin-bottom: 2.2rem; }
+  .hero-arch .eyebrow { font-size: .9rem; margin-bottom: 1.4rem; }
+  .hero-arch .btn { padding: 17px 36px; font-size: 1.05rem; min-width: 210px; }
+  .hero-arch .actions { gap: 18px; }
+  .hero-arch + .section { padding-top: 28px; }
+}
+.hero-arch .actions { display: flex; flex-wrap: wrap; align-items: center; }
+@media (min-width: 860px) {
+  /* the arch's outline hangs 12px below the column, so the line drops to meet it exactly */
+  .hero-divider { transform: translateY(15px); }
+  .hero-arch { padding-bottom: 8px; }
+  .hero-arch + .section { padding-top: 40px; }
+  /* "Hvað býð ég upp á": text and list card end at about the same height */
+  .hero-arch + .section .offer .prose p { font-size: 1.06rem; }
+  .hero-arch + .section .offer .ticks li { padding-top: 5px; padding-bottom: 5px; }
+}
+@media (max-width: 859px) { .hero-arch .btn { flex: 1; min-width: 0; padding: 14px 12px; } }
