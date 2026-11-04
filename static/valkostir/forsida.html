@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fræið · front page options</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Emilia's brand board: colours + fonts */
+:root { --sage:#A3AF9A; --ivory:#F6F4EF; --taupe:#5F564F; --sand:#D8CCB7; --lavender:#DDD4EA; --ink:#333; --muted:#6b645d;
+        --serif:"Cormorant Garamond",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+body { margin:0; background:#e6e2da; color:var(--ink); font:400 15px/1.65 var(--sans); padding:24px 16px 80px; }
+.intro, .option { max-width:1280px; margin:0 auto; }
+.intro { margin-bottom:28px; }
+.intro h1 { font:500 2rem var(--serif); margin:0 0 6px; }
+.intro p { margin:0 0 6px; color:var(--muted); max-width:70em; }
+.option { margin-bottom:48px; }
+.option h2 { font:500 1.55rem var(--serif); margin:0 0 2px; }
+.option .why { margin:0 0 12px; color:var(--muted); max-width:70em; }
+.tag { display:inline-block; font:500 .72rem var(--sans); padding:2px 10px; border-radius:99px; margin-left:8px; vertical-align:middle; }
+.tag.real { background:#5F564F; color:#fff; }
+.tag.stand { background:var(--lavender); color:var(--ink); }
+.frame { background:var(--ivory); border-radius:14px; overflow:hidden; position:relative; }
+
+.hdr { display:flex; align-items:center; justify-content:space-between; padding:16px 44px; }
+.hdr img { height:50px; display:block; }
+.menu { display:flex; gap:22px; align-items:center; font-size:.9rem; white-space:nowrap; }
+.menu .book { background:var(--ink); color:#fff; padding:8px 18px; border-radius:99px; }
+
+/* shared hero: text left, image right, about half the page */
+.hero { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:28px 64px 72px; min-height:560px; }
+.logo-left { width:150px; display:block; margin-bottom:18px; }
+.display { font:400 clamp(2.6rem,4.6vw,3.8rem)/1.08 var(--serif); margin:0 0 .5rem; }
+.lead { color:var(--muted); font-size:1.06rem; max-width:30em; margin:0 0 1.6rem; }
+.eyebrow { font:500 .74rem var(--sans); letter-spacing:.22em; text-transform:uppercase; color:var(--taupe); margin:0 0 .9rem; }
+.btns { display:flex; gap:12px; flex-wrap:wrap; }
+.btn { display:inline-block; background:var(--ink); color:#fff; text-decoration:none; padding:13px 26px; border-radius:99px; font:500 .95rem var(--sans); }
+.btn-ghost { background:transparent; color:var(--ink); border:1px solid var(--taupe); }
+.divider { display:flex; align-items:center; gap:10px; margin:1.4rem 0 0; }
+.divider::before, .divider::after { content:""; height:1px; width:60px; background:var(--sand); }
+.divider span { width:7px; height:7px; border-radius:50%; background:var(--sand); }
+
+/* the arch, her shape: big, about half the page */
+.arch-wrap { position:relative; justify-self:center; width:min(100%,470px); }
+.arch { aspect-ratio:4/5; border-radius:999px 999px 8px 8px; overflow:hidden; position:relative; }
+.arch img { width:100%; height:100%; object-fit:cover; display:block; }
+.arch-line { position:absolute; inset:-13px; border:1px solid var(--taupe); border-radius:999px 999px 10px 10px; opacity:.5; pointer-events:none; }
+.arch-dot { position:absolute; top:-18px; left:50%; width:9px; height:9px; border-radius:50%; background:var(--sand); transform:translateX(-50%); }
+.note { position:absolute; left:0; right:0; bottom:14px; text-align:center; font-size:.74rem; color:#fff; letter-spacing:.04em; text-shadow:0 1px 3px rgba(0,0,0,.45); }
+
+/* 1: her Framer arch, sage with the mark */
+.arch.sage { background:var(--sage); display:grid; place-items:center; }
+.arch.sage .mark { width:46%; aspect-ratio:1; border-radius:50%; background:var(--ivory); display:grid; place-items:center; box-shadow:0 0 0 10px rgba(246,244,239,.35); }
+.arch.sage .mark img { width:78%; height:auto; object-fit:contain; }
+
+/* 3: placeholder for the AI / photo-shoot image */
+.arch.empty { background: radial-gradient(120% 80% at 30% 20%, #efe9df 0%, #e4dccd 55%, #d8ccb7 100%); display:grid; place-items:center; text-align:center; padding:40px; }
+.arch.empty p { font:400 1.15rem/1.45 var(--serif); color:var(--taupe); margin:0; }
+.arch.empty small { display:block; margin-top:10px; font:400 .78rem/1.5 var(--sans); color:var(--muted); }
+
+/* 4: small object chips under the text: shows the brand world */
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 1.4rem; }
+.chips span { border:1px solid var(--sand); border-radius:99px; padding:5px 14px; font-size:.82rem; color:var(--taupe); background:#fffdf9; }
+
+@media (max-width:900px) { .hero { grid-template-columns:1fr; padding:20px 22px 48px; gap:32px; } .arch-wrap { order:-1; width:min(100%,340px); } .hdr { padding:14px 20px; } .menu { display:none; } }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Fræið · four ideas for the front page</h1>
+  <p>Marina's brief, 4 Nov: logo and words on the left, an image on the right about half the page, in Emilia's arch shape; welcoming, personal, trustworthy, and holding everything she offers (treatment, learning, calming objects for home).</p>
+  <p><b>Real</b> = Emilia's own photo or design. <b>Stand-in</b> = shows the idea; the final image comes from her photographer or an AI image (not generated yet).</p>
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="option">
+  <h2>1 · Her arch, from the Framer draft <span class="tag real">real: her design</span></h2>
+  <p class="why">Back to what Emilia designed herself: the sage arch with her sprout mark in an ivory circle, now larger and with the thin line and dot from her brand board. Calm and recognisably hers, but no person, so it is the least personal.</p>
+  <div class="frame">
+    <div class="hdr"><img src="img/logo-larett.png" alt="Fræið"><div class="menu"><span>Forsíða</span><span>Um mig</span><span>Meðferðir ▾</span><span>Kyrrð heima</span><span>Fræðsla</span><span>Blogg</span><span class="book">Bóka tíma</span></div></div>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Klínísk dáleiðsla · Hugræn endurforritun</p>
+        <h3 class="display">Þar sem sjálfsvitundin vex.</h3>
+        <p class="lead">Fyrir þig sem vilt skilja þig betur, vinna með gömul mynstur og skapa meiri ró og jafnvægi.</p>
+        <div class="btns"><a class="btn" href="#">Bóka tíma</a><a class="btn btn-ghost" href="#">Kynntu þér meðferðirnar</a></div>
+      </div>
+      <div class="arch-wrap"><span class="arch-dot"></span><div class="arch sage"><div class="mark"><img src="img/icon.png" alt=""></div></div><span class="arch-line"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="option">
+  <h2>2 · Emilia welcomes you <span class="tag real">real: her photo</span></h2>
+  <p class="why">The same arch, but filled with a photo of Emilia smiling to camera: the most personal welcome, and it works today with the photo she sent (among trees). A new photo in her room at Ármúli 23 from her photographer friend would be even better.</p>
+  <div class="frame">
+    <div class="hdr"><span></span><div class="menu"><span>Forsíða</span><span>Um mig</span><span>Meðferðir ▾</span><span>Kyrrð heima</span><span>Fræðsla</span><span>Blogg</span><span class="book">Bóka tíma</span></div></div>
+    <div class="hero">
+      <div>
+        <img class="logo-left" src="img/logo-lodrett.png" alt="Fræið">
+        <h3 class="display">Þar sem sjálfsvitundin vex.</h3>
+        <p class="lead">Fyrir þig sem vilt skilja þig betur, vinna með gömul mynstur og skapa meiri ró og jafnvægi.</p>
+        <div class="btns"><a class="btn" href="#">Bóka tíma</a><a class="btn btn-ghost" href="#">Um mig</a></div>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="arch-wrap"><span class="arch-dot"></span><div class="arch"><img src="img/emilia-skogur.jpg" alt="Emilia" style="object-position:50% 25%"></div><span class="arch-line"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2b ============ -->
+<section class="option">
+  <h2>2b · Emilia with her certificate <span class="tag real">real: her photo</span></h2>
+  <p class="why">Same layout as 2, with the photo from her Facebook: Emilia smiling, holding her diploma from Dáleiðsluskóli Íslands. Personal and it shows she is trained, which builds trust for a therapist. The room (painting, plants) also feels calm and homely. It's a phone photo, so a sharper version would be better for launch.</p>
+  <div class="frame">
+    <div class="hdr"><span></span><div class="menu"><span>Forsíða</span><span>Um mig</span><span>Meðferðir ▾</span><span>Kyrrð heima</span><span>Fræðsla</span><span>Blogg</span><span class="book">Bóka tíma</span></div></div>
+    <div class="hero">
+      <div>
+        <img class="logo-left" src="img/logo-lodrett.png" alt="Fræið">
+        <h3 class="display">Þar sem sjálfsvitundin vex.</h3>
+        <p class="lead">Fyrir þig sem vilt skilja þig betur, vinna með gömul mynstur og skapa meiri ró og jafnvægi.</p>
+        <div class="btns"><a class="btn" href="#">Bóka tíma</a><a class="btn btn-ghost" href="#">Um mig</a></div>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="arch-wrap"><span class="arch-dot"></span><div class="arch"><img src="img/emilia-skirteini.jpg" alt="Emilia með skírteini" style="object-position:50% 45%"></div><span class="arch-line"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="option">
+  <h2>3 · The session <span class="tag stand">stand-in: image to make</span></h2>
+  <p class="why">Like the example Emilia showed you: someone resting, relaxed under a blanket, with the therapist sitting calmly beside them. It shows what a session feels like and builds trust. Real version: her photographer friend, Emilia + a willing model. Quick version: an AI image with anonymous people (prompt 3a in the brief). Never an AI Emilia.</p>
+  <div class="frame">
+    <div class="hdr"><span></span><div class="menu"><span>Forsíða</span><span>Um mig</span><span>Meðferðir ▾</span><span>Kyrrð heima</span><span>Fræðsla</span><span>Blogg</span><span class="book">Bóka tíma</span></div></div>
+    <div class="hero">
+      <div>
+        <img class="logo-left" src="img/logo-lodrett.png" alt="Fræið">
+        <h3 class="display">Þar sem sjálfsvitundin vex.</h3>
+        <p class="lead">Öruggt og rólegt rými þar sem þú vinnur á þínum hraða.</p>
+        <div class="btns"><a class="btn" href="#">Bóka tíma</a><a class="btn btn-ghost" href="#">Hvernig fer tími fram?</a></div>
+      </div>
+      <div class="arch-wrap"><span class="arch-dot"></span><div class="arch empty"><p>Image here: a person resting under a linen blanket in a reclining chair; the therapist sits beside them, seen from the side.<small>Photo shoot, or AI prompt 3a (anonymous people)</small></p></div><span class="arch-line"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="option">
+  <h2>4 · Fræið at home: the whole brand <span class="tag stand">stand-in: mood photo</span></h2>
+  <p class="why">One calm image that holds everything: treatment, learning and the objects she wants to make (candles, journals, blankets, oils). The small chips under the text point to each part of the site. The photo here is one of her "found" mood pictures (Kaboompics) just to show the feel; the final one is her own products or an AI still life (prompt 4a).</p>
+  <div class="frame">
+    <div class="hdr"><span></span><div class="menu"><span>Forsíða</span><span>Um mig</span><span>Meðferðir ▾</span><span>Kyrrð heima</span><span>Fræðsla</span><span>Blogg</span><span class="book">Bóka tíma</span></div></div>
+    <div class="hero">
+      <div>
+        <img class="logo-left" src="img/logo-lodrett.png" alt="Fræið">
+        <h3 class="display">Þar sem sjálfsvitundin vex.</h3>
+        <p class="lead">Meðferð, fræðsla og ró heima, allt á einum stað.</p>
+        <div class="chips"><span>Klínísk dáleiðsla</span><span>Hugræn endurforritun</span><span>Fræðsla</span><span>Kyrrð heima</span></div>
+        <div class="btns"><a class="btn" href="#">Bóka tíma</a></div>
+      </div>
+      <div class="arch-wrap"><span class="arch-dot"></span><div class="arch"><img src="img/mood-stilllife.jpg" alt=""><span class="note">stand-in mood photo (not cleared for the site)</span></div><span class="arch-line"></span></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

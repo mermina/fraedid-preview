@@ -96,7 +96,7 @@ def main():
     # Version stamp for style.css/site.js: changes whenever they change, so browsers
     # don't keep showing an old cached copy (GitHub Pages caches files for 10 minutes).
     stamp = hashlib.md5(b"".join(open(os.path.join(ROOT, "static", f), "rb").read()
-                                  for f in sorted(os.listdir(os.path.join(ROOT, "static"))))).hexdigest()[:8]
+                                  for f in ("style.css", "site.js"))).hexdigest()[:8]
     env.globals.update(img=img, v=stamp)
 
     def render(template, outrel, lang, key, root=None, **ctx):

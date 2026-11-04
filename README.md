@@ -40,3 +40,6 @@ gh api -X POST repos/mermina/fraedid-preview/pages -f build_type=workflow
 ```
 Preview URL: https://mermina.github.io/fraedid-preview/ (the 404 page's links only work on the real domain).
 At launch: transfer the repo to Emilia's account (Settings → Transfer) or push it to a new repo there.
+
+## Design options (preview only)
+`static/valkostir/` holds comparison pages for Marina and Emilia (e.g. `forsida.html`, front-page options). Not linked from the site, noindex. **Delete the folder before launch.**
