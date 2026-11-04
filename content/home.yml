@@ -8,9 +8,14 @@ hero:
     en: Emilia Christina Gylfadóttir with her certificate from Dáleiðsluskóli Íslands
   # Which part of the photo stays in view inside the arch (left-right top-bottom, in %)
   photo_focus: 50% 45%
+  # A new line here = a new line on the site
   intro:
-    is: Fyrir þig sem vilt skilja þig betur, vinna með gömul mynstur og skapa meiri ró og jafnvægi.
-    en: For you who want to understand yourself better, work with old patterns and find more calm and balance.
+    is: |-
+      Fyrir þig sem vilt skilja þig betur,
+      vinna með gömul mynstur og skapa meiri ró og jafnvægi.
+    en: |-
+      For you who want to understand yourself better,
+      work with old patterns and find more calm and balance.
 
 offer:
   heading:

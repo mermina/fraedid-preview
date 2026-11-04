@@ -5,7 +5,7 @@
     <div class="hero-text">
       <p class="eyebrow">{% for svc in services.values() %}{{ t(svc.title) }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
       <h1 class="display">{{ t(site.tagline) }}</h1>
-      <p class="lead">{{ t(page.hero.intro) }}</p>
+      <p class="lead">{% for line in t(page.hero.intro).split('\n') %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
       <p class="actions"><a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a><a class="btn btn-ghost" href="{{ url('um-mig') }}">{{ t(s.nav['um-mig']) }}</a></p>
       <div class="divider" aria-hidden="true"><span></span></div>
     </div>
