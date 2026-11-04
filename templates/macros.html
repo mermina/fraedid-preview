@@ -33,7 +33,7 @@
   <fieldset class="field">
     <legend>{{ t(s.form.service) }}</legend>
     {% for k, svc in services.items() %}
-    <label class="choice"><input type="radio" name="service" value="{{ t(svc.title) }}" data-key="{{ k }}" required{% if loop.first %} checked{% endif %}> {{ t(svc.title) }} <span class="muted">({{ t(svc.price.duration) }} · {{ svc.price.amount }})</span></label>
+    <label class="choice"><input type="radio" name="service" value="{{ t(svc.title) }}" data-key="{{ k }}" required{% if loop.first %} checked{% endif %}> <span>{{ t(svc.title) }} <span class="muted">({{ t(svc.price.duration) }} · {{ svc.price.amount }})</span></span></label>
     {% endfor %}
     <label class="choice"><input type="radio" name="service" value="{{ t(s.form.service_unsure) }}" data-key="unsure"> {{ t(s.form.service_unsure) }}</label>
   </fieldset>
