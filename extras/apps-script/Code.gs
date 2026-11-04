@@ -8,7 +8,7 @@
  */
 
 // ---- settings (the only part to change) ----
-var EMILIA_EMAIL = "";          // where new requests go; empty = the Google account running the script
+var EMILIA_EMAIL = "emilia@sjalfsvitund.is";   // Emilia, 4 Nov: booking requests go here (her main Fræið address)
 var REPLY_HOURS = 48;           // promised reply time (also in content/site.yml)
 var SIGNATURE = "Emilía\nFræið · Þar sem sjálfsvitundin vex\nsjalfsvitund.is · 894-5100";
 var SIGNATURE_EN = "Emilia\nFræið · Where self-awareness grows\nsjalfsvitund.is · +354 894-5100";
