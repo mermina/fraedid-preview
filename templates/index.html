@@ -1,26 +1,23 @@
 {% extends "base.html" %}
 {% block main %}
-<section class="hero hero-centre">
-  {# soft leaf shadows, as on Emilia's brand board #}
-  <svg width="0" height="0" class="defs" aria-hidden="true">
-    <defs>
-      <filter id="leafsoft"><feGaussianBlur stdDeviation="3.2"/></filter>
-      <g id="branch">
-        <path d="M40 470 C 120 360, 200 260, 340 30" stroke="currentColor" stroke-width="3" fill="none"/>
-        {% for x, y, r in [(110,395,-58),(140,345,40),(172,298,-62),(202,250,36),(232,203,-64),(262,155,32),(290,108,-60),(316,64,26)] %}
-        <path d="M0 0 C 16 -18, 18 -52, 0 -78 C -18 -52, -16 -18, 0 0 Z" transform="translate({{ x }} {{ y }}) rotate({{ r }}) scale(1.15)"/>
-        {% endfor %}
-      </g>
-    </defs>
-  </svg>
-  <svg class="leaf leaf-right" viewBox="0 0 400 500" aria-hidden="true"><g filter="url(#leafsoft)" fill="#a3af9a" color="#a3af9a"><use href="#branch"/></g></svg>
-  <svg class="leaf leaf-left" viewBox="0 0 400 500" aria-hidden="true"><g filter="url(#leafsoft)" fill="#d8ccb7" color="#d8ccb7"><use href="#branch"/></g></svg>
-  <div class="wrap hero-inner">
-    <h1 class="hero-logo"><img src="{{ root }}static/logo-lodrett.png" alt="{{ site.name }}" width="260" height="249"></h1>
-    <div class="divider" aria-hidden="true"><span></span></div>
-    <p class="display">{{ t(site.tagline) }}</p>
-    <p class="lead">{{ t(page.hero.intro) }}</p>
-    <p class="actions"><a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a><a class="btn btn-ghost" href="#medferdir">{{ t(s.hero_more) }}</a></p>
+<section class="hero hero-arch">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">{% for svc in services.values() %}{{ t(svc.title) }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+      <h1 class="display">{{ t(site.tagline) }}</h1>
+      <p class="lead">{{ t(page.hero.intro) }}</p>
+      <p class="actions"><a class="btn" href="{{ url('hafa-samband') }}">{{ t(s.book) }}</a><a class="btn btn-ghost" href="{{ url('um-mig') }}">{{ t(s.nav['um-mig']) }}</a></p>
+      <div class="divider" aria-hidden="true"><span></span></div>
+    </div>
+    {# Emilia's arch from her brand board: photo inside, thin outline + dot around it #}
+    <div class="arch-wrap">
+      <span class="arch-dot" aria-hidden="true"></span>
+      <div class="arch">
+        {% set photo = img(page.hero.photo, 1000) %}
+        {% if photo %}<img src="{{ root }}{{ photo }}" alt="{{ t(page.hero.photo_alt) }}" width="1000" height="1250" style="object-position: {{ page.hero.photo_focus or '50% 40%' }}">{% endif %}
+      </div>
+      <span class="arch-line" aria-hidden="true"></span>
+    </div>
   </div>
 </section>
 

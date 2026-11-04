@@ -1,6 +1,13 @@
 # Forsíða. Texts: Emilia, "Fræið heimasíðan uppfært.docx" (3 Nov 2026).
 # English drafted from her Icelandic; Emilia checks before launch.
 hero:
+  # Photo in the arch on the right (portrait works best). Option 2b, chosen by Marina 4 Nov.
+  photo: /media/emilia-skirteini.jpg
+  photo_alt:
+    is: Emilia Christina Gylfadóttir með skírteini frá Dáleiðsluskóla Íslands
+    en: Emilia Christina Gylfadóttir with her certificate from Dáleiðsluskóli Íslands
+  # Which part of the photo stays in view inside the arch (left-right top-bottom, in %)
+  photo_focus: 50% 45%
   intro:
     is: Fyrir þig sem vilt skilja þig betur, vinna með gömul mynstur og skapa meiri ró og jafnvægi.
     en: For you who want to understand yourself better, work with old patterns and find more calm and balance.

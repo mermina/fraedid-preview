@@ -24,6 +24,9 @@ content:
         label: "Efst á forsíðu"
         type: object
         fields:
+          - { name: photo, label: "Mynd í boganum (hægra megin)", type: image, description: "Upprétt mynd virkar best" }
+          - { name: photo_alt, label: "Lýsing á myndinni", type: object, fields: [ { name: is, label: "Íslenska", type: string }, { name: en, label: "English", type: string } ] }
+          - { name: photo_focus, label: "Hvaða hluti myndarinnar sést", type: string, description: "T.d. 50% 45% (lárétt, lóðrétt)" }
           - name: intro
             label: "Inngangur undir slagorðinu"
             type: object

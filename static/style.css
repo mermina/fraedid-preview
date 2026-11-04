@@ -130,28 +130,29 @@ h3, .h3 { font-size: 1.45rem; }
 @media (min-width: 900px) { .page-head { padding: 80px 0 40px; } }
 .soon { margin-top: -.2rem; }
 
-/* hero: centred logo with soft leaf shadows (option 2, Marina 3 Nov) */
-.hero-centre { position: relative; overflow: hidden; text-align: center; padding: 40px 0 72px; }
-.hero-centre .defs { position: absolute; }
-.hero-inner { position: relative; }
-.hero-logo { margin: 0 auto 6px; }
-.hero-logo img { width: 190px; height: auto; margin: 0 auto; }
-.hero-centre .display { font-size: clamp(2.1rem, 5vw, 3.3rem); font-weight: 400; margin: 0 0 .6rem; }
-.hero-centre .lead { margin: 0 auto 1.8rem; }
-.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 0; }
-.leaf { position: absolute; pointer-events: none; }
-.leaf-right { right: -170px; top: -40px; width: 360px; opacity: .3; }
-.leaf-left { left: -150px; bottom: -150px; width: 340px; opacity: .35; transform: scaleX(-1) rotate(10deg); }
+/* hero 2b (Marina 4 Nov): text left, Emilia in her arch on the right; arch on top on phones */
+.hero-arch { padding: 24px 0 64px; }
+.hero-arch .hero-grid { display: grid; gap: 36px; align-items: center; }
+.hero-arch .hero-text { order: 2; }
+.hero-arch .display { font-size: clamp(2.3rem, 6vw, 3.8rem); font-weight: 400; line-height: 1.08; margin: 0 0 .7rem; }
+.hero-arch .lead { margin: 0 0 1.6rem; }
+.hero-arch .actions { justify-content: flex-start; }
+.hero-arch .divider { justify-content: flex-start; margin-top: 1.6rem; }
+.arch-wrap { position: relative; justify-self: center; width: min(100%, 330px); order: 1; margin-top: 18px; }
+.arch-wrap .arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 8px 8px; overflow: hidden; background: var(--sand); }
+.arch-wrap .arch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.arch-line { position: absolute; inset: -12px; border: 1px solid var(--taupe); border-radius: 999px 999px 10px 10px; opacity: .5; pointer-events: none; }
+.arch-dot { position: absolute; top: -17px; left: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--sand); transform: translateX(-50%); z-index: 1; }
+@media (min-width: 860px) {
+  .hero-arch { padding: 56px 0 104px; }
+  .hero-arch .hero-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .hero-arch .hero-text { order: 1; }
+  .arch-wrap { order: 2; width: min(100%, 470px); margin-top: 0; }
+}
 /* her line-and-dot divider */
 .divider { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 1.1rem 0 1.3rem; }
 .divider::before, .divider::after { content: ""; height: 1px; width: 70px; background: var(--sand); }
 .divider span { width: 7px; height: 7px; border-radius: 50%; background: var(--sand); }
-@media (min-width: 860px) {
-  .hero-centre { padding: 64px 0 112px; }
-  .hero-logo img { width: 230px; }
-  .leaf-right { right: -60px; top: -30px; width: 520px; opacity: .55; }
-  .leaf-left { left: -90px; bottom: -130px; width: 440px; opacity: .45; }
-}
 /* Header logo always visible, also on the home page (Marina 4 Nov: hiding it looked like a glitch) */
 
 /* layout helpers */
