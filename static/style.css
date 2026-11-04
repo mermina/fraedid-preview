@@ -368,3 +368,11 @@ textarea { resize: vertical; }
   .hero-arch + .section .offer .ticks li { padding-top: 5px; padding-bottom: 5px; }
 }
 @media (max-width: 859px) { .hero-arch .btn { flex: 1; min-width: 0; padding: 14px 12px; } }
+/* Hero copy spread out (Marina 4 Nov): same sizes; eyebrow higher, more space between lines, block shifted right */
+@media (min-width: 860px) {
+  .hero-arch .hero-copy { padding-left: 40px; }
+  html[lang="en"] .hero-arch .hero-copy { padding-left: 16px; }   /* English headline is longer: less room to shift */
+  .hero-arch .eyebrow { margin-bottom: 2.6rem; }
+  .hero-arch .display { margin-bottom: 2rem; }
+  .hero-arch .lead { line-height: 1.95; margin-bottom: 2.8rem; }
+}
