@@ -302,3 +302,6 @@ textarea { resize: vertical; }
 .social a { color: var(--ink); display: flex; padding: 4px; border-radius: 50%; transition: color .15s, background .15s; }
 .social a:hover { color: var(--bg); background: var(--ink); }
 .nav-collapsed .social { padding-top: 6px; }
+
+/* Fræðsla photo: wider crop so it ends level with the waiting-list card (Marina 4 Nov); face + certificate kept in frame */
+@media (min-width: 900px) { .page-grid .rounded { aspect-ratio: 16 / 9; object-position: 50% 46%; margin-top: .4rem; } }
