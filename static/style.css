@@ -376,3 +376,10 @@ textarea { resize: vertical; }
   .hero-arch .display { margin-bottom: 2rem; }
   .hero-arch .lead { line-height: 1.95; margin-bottom: 2.8rem; }
 }
+/* "Hvað býð ég upp á" (Marina 4 Nov, full text restored): the list card always matches the text height */
+@media (min-width: 900px) {
+  .hero-arch + .section .two-col.offer { align-items: stretch; }
+  .hero-arch + .section .offer .card { display: flex; flex-direction: column; justify-content: center; }
+  .hero-arch + .section .offer .ticks li { padding-top: 9px; padding-bottom: 9px; }
+  .hero-arch + .section .offer .prose p { font-size: 1rem; }
+}
