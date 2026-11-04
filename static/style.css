@@ -289,3 +289,9 @@ textarea { resize: vertical; }
 
 /* Um mig: portrait starts level with the first paragraph, not the heading (Marina 4 Nov) */
 @media (min-width: 900px) { .about-page .portrait { margin-top: 120px; } }
+
+/* Facebook / Instagram icons in the header, black and white (like Love·Raw·Cake) */
+.social { display: flex; gap: 12px; margin: 0; align-items: center; }
+.social a { color: var(--ink); display: flex; padding: 4px; border-radius: 50%; transition: color .15s, background .15s; }
+.social a:hover { color: var(--bg); background: var(--ink); }
+.nav-collapsed .social { padding-top: 6px; }

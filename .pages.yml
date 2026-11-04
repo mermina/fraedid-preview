@@ -171,6 +171,7 @@ content:
       - { name: phone, label: "Sími", type: string, required: true }
       - { name: email, label: "Netfang", type: string, required: true }
       - { name: facebook, label: "Facebook-síða (slóð)", type: string }
+      - { name: instagram, label: "Instagram (slóð)", type: string }
       - { name: address, label: "Heimilisfang", type: object, fields: *is_en }
       - { name: tagline, label: "Slagorð", type: object, fields: *is_en }
       - { name: description, label: "Lýsing fyrir Google (ein setning)", type: object, fields: *is_en_text }
