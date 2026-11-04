@@ -31,8 +31,10 @@ function doPost(e) {
     var now = new Date();
     var yes = function (v) { return v === "yes"; };
     if (p.form === "booking") {
+      // Booking form has no tick boxes (Marina, 4 Nov): clients are told under the form that they get a
+      // follow-up and occasional news, and can unsubscribe in every email (soft opt-in). Untick to stop.
       sheet.appendRow([now, p.name, p.email, p.phone || "", p.service || "", p.sessions || "", p.when || "", p.message || "",
-                       yes(p.followup), yes(p.newsletter), p.lang || "is", "Ný", "", false, false, "", ""]);
+                       true, true, p.lang || "is", "Ný", "", false, false, "", ""]);
     } else {
       sheet.appendRow([now, p.name, p.email, p.message || "", yes(p.newsletter), p.lang || "is"]);
     }
@@ -55,7 +57,7 @@ function notifyEmilia_(p, rowUrl) {
     p.phone ? "Sími: " + p.phone : "", p.service ? "Þjónusta: " + p.service : "",
     p.sessions ? "Fjöldi tíma: " + p.sessions : "", p.when ? "Hentar: " + p.when : "",
     p.message ? "\nSkilaboð:\n" + p.message : "",
-    "\nEftirfylgni: " + (p.followup === "yes" ? "já" : "nei") + " · Tilboð: " + (p.newsletter === "yes" ? "já" : "nei"),
+    p.form === "waitlist" ? "\nFréttir og tilboð: " + (p.newsletter === "yes" ? "já" : "nei") : "",
     "Tungumál: " + (p.lang || "is"),
     "\nOpna í skjalinu: " + rowUrl
   ];
@@ -105,5 +107,5 @@ function ok_() {
 // Run once by hand from the editor (▶ testBooking) to check the sheet + both emails, using your own address.
 function testBooking() {
   doPost({ parameter: { form: "booking", lang: "is", name: "Prufa Prufudóttir", email: Session.getEffectiveUser().getEmail(),
-                        phone: "000-0000", service: "Klínísk dáleiðsla", message: "Prufa", followup: "yes" } });
+                        phone: "000-0000", service: "Klínísk dáleiðsla", message: "Prufa" } });
 }

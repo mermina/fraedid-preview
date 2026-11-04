@@ -58,7 +58,7 @@ form:
   message: { is: "Viltu segja eitthvað meira?", en: "Anything else you'd like to say?" }
   message_course: { is: "Viltu segja eitthvað meira? (t.d. hvað þú vilt helst læra)", en: "Anything else? (e.g. what you would most like to learn)" }
   message_note: { is: "Aðeins Emilía les það sem þú skrifar hér og farið er með það sem trúnaðarmál. Þú þarft ekki að lýsa því sem þú vilt vinna með í smáatriðum; við förum yfir það saman í fyrsta tímanum.", en: "Only Emilia reads what you write here, and it is treated as confidential. You don't need to describe what you want to work on in detail; we will go through it together in the first session." }
-  followup: { is: Ég vil fá stutta kveðju frá Emilíu um tveimur vikum eftir tíma, en: I'd like a short note from Emilia about two weeks after my session }
+  followup_notice: { is: "Eftir tímann sendir Emilía þér stutta kveðju og stöku sinnum fréttir frá Fræinu. Þú getur afþakkað hvenær sem er, með einum smelli neðst í póstinum.", en: "After your session Emilia will send you a short note, and now and then news from Fræið. You can unsubscribe at any time with one click at the bottom of the email." }
   newsletter: { is: Ég vil fá fréttir og tilboð frá Fræinu (sjaldan), en: "I'd like news and offers from Fræið (rarely)" }
   optional: { is: valfrjálst, en: optional }
   submit_booking: { is: Ég vil bóka tíma, en: I'd like to book }

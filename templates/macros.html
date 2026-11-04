@@ -54,9 +54,8 @@
     <textarea id="b-msg" name="message" rows="4" aria-describedby="b-msg-note"></textarea>
     <p class="hint" id="b-msg-note">{{ t(s.form.message_note) }}</p>
   </div>
-  <label class="choice"><input type="checkbox" name="followup" value="yes"> {{ t(s.form.followup) }}</label>
-  <label class="choice"><input type="checkbox" name="newsletter" value="yes"> {{ t(s.form.newsletter) }}</label>
   <button class="btn" type="submit">{{ t(s.form.submit_booking) }}</button>
+  <p class="hint">{{ t(s.form.followup_notice) }}</p>
   {{ status(t, s) }}
   {{ privacy(t, s, site) }}
 </form>
