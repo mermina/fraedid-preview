@@ -76,14 +76,13 @@
     <div>
       <p>{{ site.owner }}<br>{{ t(site.title_line) }}</p>
     </div>
-    <div>
+    <div class="footer-contact">
       <p>{{ t(site.address) }}<br>
       <a href="tel:+354{{ site.phone|replace('-', '') }}">{{ site.phone }}</a><br>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.facebook %}<br><a href="{{ site.facebook }}" rel="noopener" target="_blank">Facebook</a>{% endif %}</p>
     </div>
     <div class="footer-orgs">
-      <p class="footer-label">{{ t(s.orgs_heading) }}</p>
-      <ul>
+      <ul aria-label="{{ t(s.orgs_heading) }}">
         {% for o in site.orgs %}
         <li><a href="{{ o.url }}" rel="noopener" target="_blank">{% if o.logo %}<img src="{{ root }}{{ img(o.logo, 600) }}" alt="" width="120" height="40" loading="lazy">{% endif %}<span>{{ o.name }}<small>{{ t(o.role) }}</small></span></a></li>
         {% endfor %}
