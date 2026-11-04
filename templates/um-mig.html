@@ -4,6 +4,7 @@
 {% block main %}
 <section class="section about about-page" aria-labelledby="um-mig-h">
   <div class="wrap about-grid">
+    <div class="about-side">
     <figure class="portrait">
       {% set photo = img(page.photo, 900) %}
       {% if photo %}
@@ -12,12 +13,14 @@
       <div class="photo-placeholder" role="img" aria-label="{{ t(page.photo_alt) }}"><span>{{ site.owner }}</span></div>
       {% endif %}
     </figure>
+    {# her name under the photo, so the left column fills down beside the text (Marina 4 Nov) #}
+    <p class="signature">{{ site.owner }}<br><span class="muted">{{ t(site.title_line) }}</span></p>
+    </div>
     <div class="prose">
       <h1 id="um-mig-h">{{ t(page.heading) }}</h1>
       {{ md(page.body) }}
       <p class="where">{{ t(page.where) }}</p>
       <blockquote class="quote">{{ t(page.quote) }}</blockquote>
-      <p class="signature">{{ site.owner }}<br><span class="muted">{{ t(site.title_line) }}</span></p>
     </div>
   </div>
   <div class="wrap two-col about-facts">
