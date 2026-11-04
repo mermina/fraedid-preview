@@ -1,11 +1,10 @@
 # Forsíða. Texts: Emilia, "Fræið heimasíðan uppfært.docx" (3 Nov 2026).
 # English drafted from her Icelandic; Emilia checks before launch.
 hero:
-  # Photo in the arch on the right (portrait works best).
-  # 4 Nov (Marina): mood photo "mynd 4" from Emilia's Drive = Kaboompics / Karolina Grabowska (free licence).
-  # Previous choice: /media/emilia-skirteini.jpg (Emilia with her certificate), focus 50% 45%.
-  # forsida-kyrrd.jpg = mynd-4 toned to the site palette (pink removed, ivory/sage), Marina 4 Nov
-  photo: /media/forsida-kyrrd.jpg
+  # Photo in the arch on the right. EMPTY = Emilia's own design: sage arch with her sprout mark (Marina 4 Nov).
+  # Ready alternatives (Emilia chooses): /media/forsida-kyrrd.jpg (mood photo, toned; Kaboompics licence)
+  #                                      /media/emilia-skirteini.jpg (Emilia with her certificate, focus 50% 45%)
+  photo: ""
   photo_alt:
     is: Kerti, þurrkuð blóm og bók í rólegu rými
     en: A candle, dried flowers and a book in a calm room

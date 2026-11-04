@@ -311,16 +311,28 @@ textarea { resize: vertical; }
 /* Phones: bigger tap targets for the contact links (footer, Kyrrð heima, contact page) */
 @media (max-width: 759px) { .footer-contact a, .visit a, .side a[href^="tel"], .side a[href^="mailto"] { display: inline-block; padding: 7px 0; } }
 
-/* Home hero text like option 1 (Marina 4 Nov): bigger, vertically centred beside the arch;
-   headline always on one line (size follows the screen width). Less empty space under the hero. */
+/* Home top (Marina 4 Nov): wider like the menu bar; big text, headline as large as fits on one line;
+   hero and "Hvað býð ég upp á" share one grid so the arch and the list card have the same edges. */
 .hero-arch .display { white-space: nowrap; font-size: 7.4vw; }
 .hero-arch { padding-bottom: 24px; }
 .hero-arch + .section { padding-top: 40px; }
 @media (min-width: 860px) {
+  .hero-arch .wrap, .hero-arch + .section .wrap { max-width: 1320px; }
+  .hero-arch .hero-grid, .hero-arch + .section .two-col.offer { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 56px; }
   .hero-arch { padding: 40px 0 16px; }
-  .hero-arch .hero-grid { grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
-  .hero-arch .display { font-size: min(3.6vw, 3.5rem); margin-bottom: 1rem; }
-  .hero-arch .lead { font-size: 1.15rem; line-height: 1.7; }
-  .hero-arch .eyebrow { margin-bottom: 1.1rem; }
+  .hero-arch .display { font-size: min(calc(5vw - 10px), 3.9rem); margin-bottom: 1.1rem; }
+  .hero-arch .lead { font-size: clamp(1.1rem, 1.35vw, 1.3rem); line-height: 1.7; }
+  .hero-arch .eyebrow { margin-bottom: 1.2rem; font-size: .82rem; }
+  .hero-arch .btn { padding: 15px 32px; font-size: 1rem; }
+  /* arch fills its column; its thin outline sits exactly on the column edges */
+  .hero-arch .arch-wrap { width: calc(100% - 24px); margin: 12px; justify-self: stretch; }
   .hero-arch + .section { padding-top: 40px; }
+  .hero-arch + .section .two-col.offer { align-items: start; }
 }
+
+/* Hero = Emilia's own design when no photo is set: sage arch with her sprout mark (Marina 4 Nov) */
+.arch-wrap .arch.arch-sage { background: var(--sage); display: grid; place-items: center; }
+.arch-mark { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--bg); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(246, 244, 239, .35); }
+.arch-mark img { width: 82%; height: auto; }
+/* Line breaks Emilia types in the intro apply on wider screens; on phones the sentence flows */
+@media (max-width: 599px) { .br-wide { display: none; } }
