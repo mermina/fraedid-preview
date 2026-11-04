@@ -284,3 +284,6 @@ textarea { resize: vertical; }
 @media (min-width: 900px) { .page-grid { padding-top: 80px; } .page-grid .card { position: sticky; top: 96px; } }
 .page-grid h1 { margin-bottom: .2rem; }
 .page-grid .soon { margin-bottom: 1.6rem; }
+
+/* Um mig: portrait starts level with the first paragraph, not the heading (Marina 4 Nov) */
+@media (min-width: 900px) { .about-page .portrait { margin-top: 120px; } }
