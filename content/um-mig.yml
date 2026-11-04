@@ -35,12 +35,12 @@ education_heading:
   is: Menntun og reynsla
   en: Education and experience
 education:
-  - { is: Klínískur dáleiðari frá Dáleiðsluskóla Íslands, en: Clinical hypnotherapist, trained at Dáleiðsluskóli Íslands }
+  - { is: "Klínískur dáleiðari frá Dáleiðsluskóla Íslands", en: "Clinical hypnotherapist, trained at Dáleiðsluskóli Íslands" }
   - { is: BA-gráða í félagsráðgjöf, en: BA in social work }
   - { is: Meistaragráða í mannauðsstjórnun, en: Master's degree in human resource management }
   - { is: Diplóma í opinberri stjórnsýslu, en: Diploma in public administration }
   - { is: Gottman Level 1 þjálfun í samskiptum og tengslum, en: Gottman Method Level 1 training in communication and relationships }
-  - { is: Yfir 20 ára reynsla af stuðningi, ráðgjöf og vinnu með einstaklingum og fjölskyldum, en: More than 20 years' experience of support, counselling and work with individuals and families }
+  - { is: "Yfir 20 ára reynsla af stuðningi, ráðgjöf og vinnu með einstaklingum og fjölskyldum", en: "More than 20 years' experience of support, counselling and work with individuals and families" }
 links_heading:
   is: Fagleg tengsl
   en: Professional memberships
