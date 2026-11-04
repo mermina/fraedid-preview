@@ -152,9 +152,7 @@ h3, .h3 { font-size: 1.45rem; }
   .leaf-right { right: -60px; top: -30px; width: 520px; opacity: .55; }
   .leaf-left { left: -90px; bottom: -130px; width: 440px; opacity: .45; }
 }
-/* On the home page the big logo is the hero, so the small header logo only appears once you scroll */
-.page-index .site-header .brand { transition: opacity .25s; }
-.page-index .site-header:not(.scrolled) .brand { opacity: 0; pointer-events: none; }
+/* Header logo always visible, also on the home page (Marina 4 Nov: hiding it looked like a glitch) */
 
 /* layout helpers */
 .two-col { display: grid; gap: 32px; align-items: start; }
