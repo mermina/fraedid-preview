@@ -310,3 +310,7 @@ textarea { resize: vertical; }
 
 /* Phones: bigger tap targets for the contact links (footer, Kyrrð heima, contact page) */
 @media (max-width: 759px) { .footer-contact a, .visit a, .side a[href^="tel"], .side a[href^="mailto"] { display: inline-block; padding: 7px 0; } }
+
+/* Home headline on one line (Marina 4 Nov): size follows the screen width so it never wraps */
+.hero-arch .display { white-space: nowrap; font-size: 7.4vw; }
+@media (min-width: 860px) { .hero-arch .display { font-size: min(3.3vw, 3.4rem); } }

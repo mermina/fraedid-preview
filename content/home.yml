@@ -1,13 +1,15 @@
 # Forsíða. Texts: Emilia, "Fræið heimasíðan uppfært.docx" (3 Nov 2026).
 # English drafted from her Icelandic; Emilia checks before launch.
 hero:
-  # Photo in the arch on the right (portrait works best). Option 2b, chosen by Marina 4 Nov.
-  photo: /media/emilia-skirteini.jpg
+  # Photo in the arch on the right (portrait works best).
+  # 4 Nov (Marina): mood photo "mynd 4" from Emilia's Drive = Kaboompics / Karolina Grabowska (free licence).
+  # Previous choice: /media/emilia-skirteini.jpg (Emilia with her certificate), focus 50% 45%.
+  photo: /media/kyrrd-heima/mynd-4.jpg
   photo_alt:
-    is: Emilia Christina Gylfadóttir með skírteini frá Dáleiðsluskóla Íslands
-    en: Emilia Christina Gylfadóttir with her certificate from Dáleiðsluskóli Íslands
+    is: Kerti, þurrkuð blóm og bók í rólegu rými
+    en: A candle, dried flowers and a book in a calm room
   # Which part of the photo stays in view inside the arch (left-right top-bottom, in %)
-  photo_focus: 50% 45%
+  photo_focus: 50% 55%
   # A new line here = a new line on the site
   intro:
     is: |-
