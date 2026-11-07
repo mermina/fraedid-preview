@@ -15,7 +15,7 @@
     {% for o in items %}
     <li class="object">
       {% set src = img(o.image, 800) %}
-      {% if src %}<img src="{{ root }}{{ src }}" alt="{{ t(o.name) }}" loading="lazy">{% endif %}
+      {% if src %}<a class="zoom" href="{{ root }}{{ img(o.image, 1600) }}" data-caption="{{ t(o.name) }}" aria-label="{{ t(s.enlarge) }}: {{ t(o.name) }}"><img src="{{ root }}{{ src }}" alt="{{ t(o.name) }}" loading="lazy"></a>{% endif %}
       <h2 class="h3">{{ t(o.name) }}</h2>
       {% if o.text %}<p>{{ t(o.text) }}</p>{% endif %}
     </li>

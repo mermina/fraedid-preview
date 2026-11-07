@@ -392,3 +392,13 @@ textarea { resize: vertical; }
   .hero-arch .eyebrow { margin-bottom: 1.6rem; }
   .hero-arch .display { margin-bottom: 1.6rem; }
 }
+
+/* photo zoom (Kyrrð heima) */
+a.zoom { display: block; cursor: zoom-in; border-radius: var(--radius); }
+a.zoom:focus-visible { outline: 2px solid var(--taupe); outline-offset: 3px; }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94vh; overflow: visible; }
+.lightbox::backdrop { background: rgba(30, 28, 26, .82); }
+.lightbox img { display: block; max-width: 94vw; max-height: 86vh; width: auto; height: auto; border-radius: 10px; margin: 0 auto; }
+.lightbox-caption { color: #fff; text-align: center; margin: 10px 0 0; font-size: 15px; }
+.lightbox-close { position: fixed; top: 14px; right: 16px; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.92); color: var(--ink); font-size: 26px; line-height: 1; cursor: pointer; }

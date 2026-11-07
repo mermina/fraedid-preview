@@ -3,6 +3,7 @@ lang_name: { is: Íslenska, en: English }
 skip: { is: Fara beint í efni, en: Skip to content }
 menu: { is: Valmynd, en: Menu }
 close: { is: Loka, en: Close }
+enlarge: { is: Stækka mynd, en: Enlarge photo }
 home: { is: Forsíða, en: Home }
 nav:
   index: { is: Forsíða, en: Home }

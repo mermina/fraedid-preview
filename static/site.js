@@ -95,3 +95,28 @@
     });
   });
 })();
+
+// ---- Photo zoom: a link with class "zoom" opens its photo full size over the page.
+// Without JavaScript (or old browsers without <dialog>) the link simply opens the photo.
+(function () {
+  var links = document.querySelectorAll("a.zoom");
+  if (!links.length || typeof HTMLDialogElement !== "function") return;
+  var closeLabel = document.documentElement.lang === "en" ? "Close" : "Loka";
+  var d = document.createElement("dialog");
+  d.className = "lightbox";
+  d.innerHTML = '<button type="button" class="lightbox-close" aria-label="' + closeLabel + '">×</button>' +
+                '<img alt=""><p class="lightbox-caption"></p>';
+  document.body.appendChild(d);
+  var im = d.querySelector("img"), cap = d.querySelector(".lightbox-caption");
+  links.forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      im.src = a.href; im.alt = a.dataset.caption || "";
+      cap.textContent = a.dataset.caption || "";
+      d.showModal();
+    });
+  });
+  d.querySelector(".lightbox-close").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); }); // click outside the photo
+  d.addEventListener("close", function () { im.removeAttribute("src"); });
+})();
